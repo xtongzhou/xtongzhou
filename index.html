@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人经历地图 - Goose Goose Duck Style</title>
+    <!-- 引入字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 视图一：身份牌入口 -->
+    <div id="entry-view" class="view active">
+        <div class="card-container">
+            <div class="card-hero">
+                <div class="avatar-box">🦆</div>
+            </div>
+            <h1 class="card-title">模仿鹅 · 六边形战士形态</h1>
+            <div class="divider"></div>
+            
+            <div class="skills-list">
+                <div class="skill-item">
+                    <span class="skill-icon">🔄</span>
+                    <div class="skill-content">
+                        <strong>模式切换 — 双修选手</strong>
+                        <p>能做数据分析，也能建机器学习模型。左手SQL取数，右手Python炼丹，中间还能写个VBA提效。</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🔍</span>
+                    <div class="skill-content">
+                        <strong>模式猎手 — 从数据中挖真相</strong>
+                        <p>不迷信复杂算法，只相信数据的物理意义。在6000+变量中锁定关键信号，把隐藏模式转化为商业决策。</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🚀</span>
+                    <div class="skill-content">
+                        <strong>工程落地 — 不只炼丹，还端菜</strong>
+                        <p>从数据清洗到PMML部署，全链路掌控。效率提升50%，拒绝纸上谈兵。</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🤖</span>
+                    <div class="skill-content">
+                        <strong>AI进化中 — 正在加载新形态</strong>
+                        <p>向AI/LLM转型，把大模型装进技能背包。能数分能建模，肯干活愿当牛马。</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">💡</span>
+                    <div class="skill-content">
+                        <strong>商业嗅觉 — 让算法值钱</strong>
+                        <p>认可数据的价值不在于算法多复杂，而在于能否驱动真实的商业决策。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+            
+            <div class="bio-box">
+                <p>一个能做数据分析、也能建机器学习模型的“双修选手”。港大硕士在读，本科三次一等奖学金。做过端到端风控模型，在Kaggle拿过银牌（Top 5%），从时序数据里捕捉过肿瘤的早期信号。正在找<strong>数据分析/数据科学/机器学习工程师</strong>岗位。</p>
+            </div>
+
+            <div class="divider"></div>
+            
+            <div class="quote-box">
+                <em>“数据不会说谎，只是需要正确的解读方式。”</em>
+            </div>
+
+            <button id="btn-enter-game" class="btn-primary">进入游戏</button>
+        </div>
+    </div>
+
+    <!-- 视图二：地图页面 -->
+    <div id="map-view" class="view hidden">
+        <div class="status-bar">
+            <span>当前对局：人生Online</span>
+            <span>角色：模仿鹅</span>
+            <span id="game-status">状态：探索中</span>
+        </div>
+
+        <div class="map-container" id="map-container">
+            <!-- 角色 -->
+            <div id="player-char" class="player-char">🦆</div>
+
+            <!-- 地图区域设定 -->
+            <div class="zone-grid">
+                <!-- 区域1：代码森林 -->
+                <div class="zone-card" data-zone="code" id="zone-code">
+                    <div class="zone-icon">🌲</div>
+                    <div class="zone-name">代码森林</div>
+                </div>
+
+                <!-- 区域2：深夜咖啡馆 -->
+                <div class="zone-card" data-zone="cafe" id="zone-cafe">
+                    <div class="zone-icon">☕</div>
+                    <div class="zone-name">深夜咖啡馆</div>
+                </div>
+
+                <!-- 区域3：成就殿堂 -->
+                <div class="zone-card" data-zone="achieve" id="zone-achieve">
+                    <div class="zone-icon">🏆</div>
+                    <div class="zone-name">成就殿堂</div>
+                </div>
+            </div>
+
+            <!-- 彩蛋装饰物 -->
+            <div class="easter-egg" style="top: 20%; left: 10%;" data-msg="这桶爆米花已经陪你看完 100 场直播了🍿">🍿</div>
+            <div class="easter-egg" style="bottom: 15%; right: 15%;" data-msg="这只呆鸭站在这里思考鸭生，不要打扰它！🐤">🐤</div>
+        </div>
+
+        <!-- 弹窗容器 -->
+        <div class="modal-overlay hidden" id="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="modal-title" class="modal-title"></span>
+                    <button id="btn-close-modal" class="btn-close">×</button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- 内容动态注入 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 数据存储 (用于模态框内容) -->
+    <template id="tpl-code">
+        <div class="content-block">
+            <h3>🎓 教育背景</h3>
+            <p><strong>香港大学</strong>｜数据科学硕士｜2024-2026<br>
+            <strong>北师香港浸会大学</strong>｜数据科学与大数据技术｜GPA 3.78/4.0（专业前10%）<br>
+            三次“校级一等奖学金”得主</p>
+
+            <h3>💼 实战履历</h3>
+            <p><strong>百融云创｜金融科技部数据分析</strong><br>
+            - 端到端风控模型开发：从目标变量分析→6000+变量筛选→LightGBM/LR建模→PMML部署<br>
+            - 把KS从0.18提到0.21，AUC提升8%<br>
+            - 把单次模型迭代周期从5天缩短到2.5天，效率提升50%</p>
+            <p><strong>招商证券｜托管部统计分析</strong><br>
+            - 用Python+VBA处理900+基金数据，构建自动化报表<br>
+            - 把日常处理时长从90分钟压缩到20分钟，效率提升78%</p>
+
+            <h3>🏆 项目高光</h3>
+            <ul>
+                <li>Kaggle儿童睡眠检测｜Top 5%｜CenterNet+Transformer架构，AP 0.787</li>
+                <li>时序生物标志物检测｜AutoEncoder+LSTM，锁定40个核心肿瘤标志物</li>
+                <li>Wordle建模｜ARIMA+深度学习，MAPE 3.7%</li>
+            </ul>
+
+            <h3>🔧 技能树</h3>
+            <div class="tech-stack">Python · SQL · LightGBM · PyTorch · Scikit-learn · PMML · VBA · 端到端模型落地</div>
+
+            <h3 class="game-talk">📝 一句游戏黑话</h3>
+            <blockquote>“Debug就像在鹅鸭杀里找内鬼——明知道有，就是抓不到，抓到的时候会特别爽。”</blockquote>
+        </div>
+    </template>
+
+    <template id="tpl-cafe">
+        <div class="content-block">
+            <h3>🧩 身份标签</h3>
+            <p>ESTJ（总经理型人格）· 务实派 · 效率狂魔 · 奶茶重度用户 · 目标导向</p>
+
+            <h3>🎧 近期循环歌单</h3>
+            <ul>
+                <li>Lo-fi 学习歌单（写代码时）</li>
+                <li>告五人（放空时）</li>
+                <li>技术播客（通勤时）</li>
+            </ul>
+
+            <h3>📚 最近在读</h3>
+            <p>《大模型应用开发》—— 为了转型<br>
+            《系统架构设计》—— 为了更好的工程落地</p>
+
+            <h3>💼 工作哲学</h3>
+            <ul>
+                <li>相信流程和效率：把5天的活压缩到2.5天，不是卷，是优化</li>
+                <li>讨厌无效会议：能用文档说清的，绝不开会</li>
+                <li>目标导向：定了KPI就想办法超额完成</li>
+            </ul>
+
+            <h3>🐱 关于我的一些碎片</h3>
+            <ul>
+                <li>最大的超能力：能从6000+个变量里找到有用的那个，但找不到自己的AirPods</li>
+                <li>快乐来源：模型收敛 + 代码跑通 + 咖啡的第一口</li>
+                <li>强迫症：变量命名必须规范，代码必须有注释</li>
+            </ul>
+
+            <h3 class="game-talk">✨ 最近的小确幸</h3>
+            <p>成功复现了一个LLM微调的demo，跑通的那一刻觉得：“我好像真的在转型了。”</p>
+            <blockquote>“在数据里找规律，在代码里找效率，在深夜找自己的节奏。”</blockquote>
+        </div>
+    </template>
+
+    <template id="tpl-achieve">
+        <div class="content-block">
+            <h3>🥇 学术成就</h3>
+            <ul>
+                <li>三次“校级一等奖学金”（本科，专业前10%）</li>
+                <li>香港大学数据科学硕士（在读）</li>
+                <li>Kaggle儿童睡眠检测赛银牌（Top 5%）</li>
+            </ul>
+
+            <h3>💼 职业里程碑</h3>
+            <ul>
+                <li>端到端风控模型落地：从0到1主导8个贷前风控模型的完整生命周期，最终通过PMML部署上线</li>
+                <li>效率革命：把模型迭代周期从5天压缩到2.5天，团队效率提升50%</li>
+                <li>自动化管道搭建：把手工建模流程整合成“一键式”生成，从此告别重复劳动</li>
+            </ul>
+
+            <h3>🔬 技术突破</h3>
+            <ul>
+                <li>时序生物标志物检测：用AutoEncoder+LSTM捕捉肿瘤早期信号，锁定40个核心标志物，成果获生物学验证</li>
+                <li>Wordle难度建模：用KL散度还原玩家猜测分布，成功构建3级难度评估准则</li>
+            </ul>
+
+            <h3>🌟 AI评价（来自面试官）</h3>
+            <blockquote>“公司苦苦寻找的六边形战士。具备理论深度+工程落地+业务转化的黄金三角。在AutoML时代，他展现出的重构问题与跨界抽象能力，是人类数据科学家最核心且不可替代的护城河。”</blockquote>
+
+            <h3>🚀 正在解锁的成就</h3>
+            <ul>
+                <li>向AI/LLM转型中：正在学大模型，做AI</li>
+                <li>找工作ing：希望能给个机会</li>
+                <li>很多idea想变现：就差一个平台</li>
+            </ul>
+
+            <h3 class="game-talk">💬 关于成就</h3>
+            <blockquote>“最大的成就不是拿了多少奖，而是每次遇到新问题，我都知道自己能搞定——哪怕需要换一个身份。”</blockquote>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
