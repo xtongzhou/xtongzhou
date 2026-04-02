@@ -60,137 +60,6 @@ body {
     z-index: 10;
 }
 
-/* ---------------- 二、身份牌入口 (第一层) ---------------- */
-#entry-view {
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-    background: radial-gradient(circle at center, #1e293b 0%, var(--color-bg-main) 100%);
-}
-
-.card-container {
-    background: var(--color-card-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--color-neon-blue);
-    box-shadow: 0 0 20px var(--color-neon-blue-glow);
-    border-radius: 24px;
-    padding: 2.5rem;
-    max-width: 600px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card-hero {
-    margin-bottom: 1.5rem;
-}
-
-.avatar-box {
-    font-size: 5rem;
-    line-height: 1;
-    width: 120px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px dashed var(--color-accent-yellow);
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(252, 211, 77, 0.2);
-}
-
-.card-title {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    color: var(--color-accent-yellow);
-    text-align: center;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-    text-shadow: 0 0 5px rgba(252, 211, 77, 0.5);
-}
-
-.divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-border-grid), transparent);
-    margin: 1.5rem 0;
-}
-
-.skills-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-}
-
-.skill-item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    padding: 0.8rem;
-    border-radius: 12px;
-    transition: background 0.3s ease;
-}
-
-.skill-item:hover {
-    background: rgba(255,255,255,0.05);
-}
-
-.skill-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.skill-content strong {
-    display: block;
-    color: var(--color-neon-blue);
-    margin-bottom: 0.2rem;
-    font-family: var(--font-code);
-}
-
-.skill-content p {
-    font-size: 0.9rem;
-    color: var(--color-text-muted);
-}
-
-.bio-box {
-    background: rgba(0,0,0,0.2);
-    padding: 1.5rem;
-    border-left: 4px solid var(--color-neon-blue);
-    border-radius: 0 12px 12px 0;
-    font-size: 0.95rem;
-    color: var(--color-text-main);
-}
-
-.quote-box {
-    text-align: center;
-    font-family: var(--font-code);
-    color: var(--color-text-muted);
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
-}
-
-.btn-primary {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    padding: 1rem 2rem;
-    background-color: var(--color-accent-yellow);
-    color: #000;
-    border: none;
-    border-radius: 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(252, 211, 77, 0.4);
-}
-
-.btn-primary:hover {
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 8px 25px rgba(252, 211, 77, 0.6);
-}
-
 
 /* ---------------- 三、地图页面 (第二层) ---------------- */
 #map-view {
@@ -515,13 +384,37 @@ blockquote {
         gap: 1.5rem;
     }
 
-    .avatar-box {
-        width: 80px;
-        height: 80px;
-        font-size: 3.5rem;
+    .hacker-container {
+        flex-direction: column;
+    }
+
+    .panel-left {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 1.5rem;
     }
     
-    .card-title {
-        font-size: 1rem;
+    .panel-right {
+        padding: 1.5rem;
+    }
+    
+    .photo-frame {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .role-name {
+        font-size: 20px;
+    }
+    
+    .btn-terminal {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    
+    .action-area {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }
