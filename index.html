@@ -2,474 +2,827 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人经历地图 - Goose Goose Duck Style</title>
-    <!-- 引入字体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;700&family=Press+Start+2P&family=Geist+Mono:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人经历地图 - Goose Goose Duck Style</title>
+  <!-- 引入字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;700&family=Press+Start+2P&family=Geist+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "on-secondary-fixed-variant": "#a30040",
-                        "surface-tint": "#ffd16c",
-                        "secondary": "#ff6d8d",
-                        "on-secondary": "#480018",
-                        "surface-container": "#171a1c",
-                        "on-background": "#eeeef0",
-                        "on-secondary-fixed": "#6e0028",
-                        "on-primary-fixed-variant": "#604700",
-                        "outline": "#747578",
-                        "surface-variant": "#232629",
-                        "on-tertiary-container": "#110000",
-                        "secondary-fixed-dim": "#ffaeba",
-                        "primary-fixed-dim": "#ecb200",
-                        "surface": "#0c0e10",
-                        "error": "#ff7351",
-                        "secondary-dim": "#e2165f",
-                        "on-surface": "#eeeef0",
-                        "surface-bright": "#292c2f",
-                        "on-primary-container": "#553e00",
-                        "primary-container": "#fdc003",
-                        "inverse-surface": "#f9f9fc",
-                        "surface-container-high": "#1d2022",
-                        "on-primary-fixed": "#3d2b00",
-                        "tertiary-fixed-dim": "#ff7c6c",
-                        "primary-fixed": "#fdc003",
-                        "background": "#0c0e10",
-                        "surface-container-low": "#111416",
-                        "on-surface-variant": "#aaabad",
-                        "on-primary": "#604700",
-                        "tertiary-container": "#fd493b",
-                        "on-tertiary-fixed": "#3a0001",
-                        "error-container": "#b92902",
-                        "outline-variant": "#46484a",
-                        "error-dim": "#d53d18",
-                        "inverse-primary": "#795a00",
-                        "inverse-on-surface": "#535557",
-                        "secondary-fixed": "#ffc2ca",
-                        "surface-dim": "#0c0e10",
-                        "surface-container-lowest": "#000000",
-                        "tertiary-dim": "#ff7161",
-                        "on-tertiary": "#4a0001",
-                        "tertiary-fixed": "#ff9385",
-                        "secondary-container": "#bc004b",
-                        "on-error": "#450900",
-                        "primary": "#ffd16c",
-                        "primary-dim": "#ecb200",
-                        "surface-container-highest": "#232629",
-                        "on-tertiary-fixed-variant": "#7a0003",
-                        "on-error-container": "#ffd2c8",
-                        "on-secondary-container": "#fff6f5",
-                        "tertiary": "#ff7161"
-                    },
-                    fontFamily: {
-                        "headline": ["Plus Jakarta Sans"],
-                        "body": ["Be Vietnam Pro"],
-                        "label": ["Plus Jakarta Sans"]
-                    },
-                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
-                },
-            },
-        }
-    </script>
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#a30040",
+            "surface-tint": "#ffd16c",
+            "secondary": "#ff6d8d",
+            "on-secondary": "#480018",
+            "surface-container": "#171a1c",
+            "on-background": "#eeeef0",
+            "on-secondary-fixed": "#6e0028",
+            "on-primary-fixed-variant": "#604700",
+            "outline": "#747578",
+            "surface-variant": "#232629",
+            "on-tertiary-container": "#110000",
+            "secondary-fixed-dim": "#ffaeba",
+            "primary-fixed-dim": "#ecb200",
+            "surface": "#0c0e10",
+            "error": "#ff7351",
+            "secondary-dim": "#e2165f",
+            "on-surface": "#eeeef0",
+            "surface-bright": "#292c2f",
+            "on-primary-container": "#553e00",
+            "primary-container": "#fdc003",
+            "inverse-surface": "#f9f9fc",
+            "surface-container-high": "#1d2022",
+            "on-primary-fixed": "#3d2b00",
+            "tertiary-fixed-dim": "#ff7c6c",
+            "primary-fixed": "#fdc003",
+            "background": "#0c0e10",
+            "surface-container-low": "#111416",
+            "on-surface-variant": "#aaabad",
+            "on-primary": "#604700",
+            "tertiary-container": "#fd493b",
+            "on-tertiary-fixed": "#3a0001",
+            "error-container": "#b92902",
+            "outline-variant": "#46484a",
+            "error-dim": "#d53d18",
+            "inverse-primary": "#795a00",
+            "inverse-on-surface": "#535557",
+            "secondary-fixed": "#ffc2ca",
+            "surface-dim": "#0c0e10",
+            "surface-container-lowest": "#000000",
+            "tertiary-dim": "#ff7161",
+            "on-tertiary": "#4a0001",
+            "tertiary-fixed": "#ff9385",
+            "secondary-container": "#bc004b",
+            "on-error": "#450900",
+            "primary": "#ffd16c",
+            "primary-dim": "#ecb200",
+            "surface-container-highest": "#232629",
+            "on-tertiary-fixed-variant": "#7a0003",
+            "on-error-container": "#ffd2c8",
+            "on-secondary-container": "#fff6f5",
+            "tertiary": "#ff7161"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Be Vietnam Pro"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
 
-        .glass-panel {
-            background: rgba(41, 44, 47, 0.6);
-            backdrop-filter: blur(20px);
-        }
+    .glass-panel {
+      background: rgba(41, 44, 47, 0.6);
+      backdrop-filter: blur(20px);
+    }
 
-        .goose-shadow {
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
-        }
+    .goose-shadow {
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+    }
 
-        .stamped-text {
-            text-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
-        }
+    .stamped-text {
+      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.5);
+    }
 
-        .skill-list::-webkit-scrollbar {
-            width: 4px;
-        }
+    .skill-list::-webkit-scrollbar {
+      width: 4px;
+    }
 
-        .skill-list::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
+    .skill-list::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
 
-        .skill-list::-webkit-scrollbar-thumb {
-            background: #ffd16c;
-            border-radius: 10px;
-        }
-    </style>
+    .skill-list::-webkit-scrollbar-thumb {
+      background: #ffd16c;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 
 <body>
-    <!-- 视图一：身份牌入口 (Terminal Hacker × Glassmorphism) -->
-    <div id="entry-view" class="view active bg-background text-on-surface font-body overflow-hidden">
-        <!-- TopNavBar Component -->
-        <nav
-            class="fixed top-0 left-0 w-full z-50 flex justify-between items-center max-w-[1920px] mx-auto bg-transparent backdrop-blur-md px-8 py-6 shadow-2xl shadow-black/40">
-            <div
-                class="text-2xl font-black text-[#ffd16c] drop-shadow-[0_2px_0_rgba(0,0,0,1)] uppercase tracking-widest font-headline">
-                ABOUT ME</div>
-            <div class="hidden md:flex items-center gap-10">
-                <a class="font-headline font-bold uppercase tracking-widest text-[#eeeef0] hover:text-[#ffd16c] transition-colors hover:scale-105 active:scale-95 duration-200"
-                    href="#"></a>
-                <a class="font-headline font-bold uppercase tracking-widest text-[#eeeef0] hover:text-[#ffd16c] transition-colors hover:scale-105 active:scale-95 duration-200"
-                    href="#"></a>
-                <a class="font-headline font-bold uppercase tracking-widest text-[#eeeef0] hover:text-[#ffd16c] transition-colors hover:scale-105 active:scale-95 duration-200"
-                    href="#"></a>
-                <a class="font-headline font-bold uppercase tracking-widest text-[#eeeef0] hover:text-[#ffd16c] transition-colors hover:scale-105 active:scale-95 duration-200"
-                    href="#"></a>
-            </div>
-            <div class="flex items-center gap-4">
-                <button
-                    class="bg-[#ffd16c]/10 border border-[#ffd16c]/30 text-[#ffd16c] px-4 py-2 rounded-lg font-headline font-bold tracking-wider hover:bg-[#ffd16c]/20 transition-all text-sm">
-                    EN / 中
-                </button>
-            </div>
-        </nav>
-        <!-- Main Content: Game Lobby Landing -->
-        <main class="relative h-screen w-full flex items-center justify-center overflow-hidden">
-            <!-- Ambient Background Scene -->
-            <div class="absolute inset-0 z-0">
-                <div
-                    class="absolute inset-0 bg-gradient-to-b from-surface via-surface-container-low to-surface-container-lowest opacity-90">
-                </div>
-                <img alt="Background Scene" class="w-full h-full object-cover opacity-20 mix-blend-overlay"
-                    data-alt="cinematic dark gaming lobby interior with neon yellow accents and architectural silhouettes in soft mist"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9BIiC4Pxsfib92_MIv3DzjPuNXVTpHZnNbOqDeZrPXR8J3M0QBTjB-0y9_-2v6NdfFZ3iCbEYAjN10m4tLcH-ZGFq6fqGS1JiSB060jK91zj2jWeM_i7gwKRcQAgQqeI3xOKelyR_OthuDtW9AmVIB7oP8z9P9ISk736da_n3EmLMV4qNd9EeG2-GKLjTRxv5giIKiQSRFku7wpuoo9RD3O2fCFI4NyaWTqAGjpOpDScbvSmYS5F6neDNk0XOrb-_S5T8faGamN8" />
-            </div>
-            <!-- Two-Column Layout Grid -->
-            <div class="relative z-10 w-full max-w-7xl px-8 grid grid-cols-12 gap-12 items-center h-full pt-20 pb-20">
-                <!-- Left Column: Character Photo -->
-                <div class="col-span-12 lg:col-span-5 flex flex-col items-center justify-center relative">
-                    <!-- Stamped Title -->
-                    <div class="absolute top-[-3rem] text-center w-full z-20">
-                        <h1
-                            class="text-7xl font-headline font-black text-primary uppercase tracking-tighter stamped-text transform -rotate-2">
-                            我的领域
-                        </h1>
-                        <p class="text-on-surface-variant font-headline font-bold tracking-[0.4em] text-xs mt-2">MY
-                            TERRITORY</p>
-                    </div>
-                    <!-- Main Goose Character -->
-                    <div
-                        class="relative w-full max-w-md goose-shadow transform hover:scale-105 transition-transform duration-500 cursor-pointer">
-                        <img alt="Central Goose Character" class="w-full h-auto object-contain"
-                            data-alt="chunky cartoon goose character dressed in a yellow raincoat and matching rain hat, cinematic low-angle gaming character view"
-                            src="pic/个人照片.JPG" />
-                        <div
-                            class="absolute bottom-4 left-1/2 -translate-x-1/2 w-48 h-8 bg-primary/20 blur-2xl rounded-full">
-                        </div>
-                    </div>
-                    <!-- Quote under photo -->
-                    <div class="mt-8 px-4">
-                        <p
-                            class="text-lg font-headline font-black text-primary italic leading-tight text-center drop-shadow-md">
-                            "数据不会说谎，只是需要正确的解读方式。"
-                        </p>
-                    </div>
-                </div>
-                <!-- Right Column: Identity Card restructured -->
-                <div class="col-span-12 lg:col-span-7 flex flex-col items-center justify-center">
-                    <!-- Label above the box -->
-                    <p
-                        class="text-xs font-headline font-bold text-primary tracking-[0.5em] uppercase mb-6 drop-shadow-lg">
-                        Identity Card</p>
-                    <div
-                        class="w-full glass-panel p-10 rounded-lg border-2 border-primary/20 flex flex-col gap-8 shadow-2xl relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <span class="material-symbols-outlined text-8xl" data-icon="shield">shield</span>
-                        </div>
-                        <div class="flex items-center gap-6">
-                            <div
-                                class="w-20 h-20 rounded-full border-4 border-primary overflow-hidden shadow-lg shadow-primary/20">
-                                <img alt="Avatar" class="w-full h-full object-cover"
-                                    data-alt="close-up of a stylized playful goose character illustration with a tiny detective hat"
-                                    src="pic/个人照片.JPG" />
-                            </div>
-                            <div>
-                                <h2 class="text-3xl font-headline font-black text-on-surface">模仿鹅 · 六边形战士形态</h2>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="space-y-4">
-                                <h3
-                                    class="font-headline font-bold text-primary text-xs uppercase tracking-widest flex items-center gap-2 border-b border-primary/20 pb-2">
-                                    <span class="material-symbols-outlined text-sm"
-                                        data-icon="military_tech">military_tech</span> Character Skills
-                                </h3>
-                                <div class="skill-list max-h-[320px] overflow-y-auto pr-2 space-y-5">
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined text-secondary"
-                                            data-icon="swap_horiz">swap_horiz</span>
-                                        <div>
-                                            <p class="text-sm font-bold text-on-surface">模式切换</p>
-                                            <p class="text-[11px] text-on-surface-variant leading-relaxed">
-                                                灵活应对多种复杂业务场景与技术挑战。</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined text-secondary"
-                                            data-icon="search">search</span>
-                                        <div>
-                                            <p class="text-sm font-bold text-on-surface">模式猎手</p>
-                                            <p class="text-[11px] text-on-surface-variant leading-relaxed">
-                                                在海量数据中精准捕捉关键洞察与规律。</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined text-secondary"
-                                            data-icon="rocket_launch">rocket_launch</span>
-                                        <div>
-                                            <p class="text-sm font-bold text-on-surface">工程落地</p>
-                                            <p class="text-[11px] text-on-surface-variant leading-relaxed">
-                                                具备强大的全栈实现能力，让创意快速上线。</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined text-secondary"
-                                            data-icon="psychology">psychology</span>
-                                        <div>
-                                            <p class="text-sm font-bold text-on-surface">AI进化中</p>
-                                            <p class="text-[11px] text-on-surface-variant leading-relaxed">
-                                                深度探索LLM与生成式AI的无限可能。</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-3">
-                                        <span class="material-symbols-outlined text-secondary"
-                                            data-icon="trending_up">trending_up</span>
-                                        <div>
-                                            <p class="text-sm font-bold text-on-surface">商业嗅觉</p>
-                                            <p class="text-[11px] text-on-surface-variant leading-relaxed">
-                                                洞察技术背后的商业逻辑与用户增长价值。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="space-y-4">
-                                    <h3
-                                        class="font-headline font-bold text-primary text-xs uppercase tracking-widest flex items-center gap-2 border-b border-primary/20 pb-2">
-                                        <span class="material-symbols-outlined text-sm"
-                                            data-icon="history_edu">history_edu</span> Biography
-                                    </h3>
-                                    <p
-                                        class="text-sm text-on-surface-variant leading-relaxed border-l-4 border-primary/40 pl-4 py-1 italic">
-                                        HKU Master in Data Science. Kaggle Silver Medalist. <br /><br />
-                                        Passion for building intelligent products and exploring the boundaries of
-                                        technology through data-driven innovation and creative problem solving.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Exploration Button below the box -->
-                    <div class="mt-12 w-full max-w-sm relative group text-center">
-                        <div
-                            class="absolute inset-0 bg-primary/30 blur-2xl group-hover:bg-primary/50 transition-all rounded-full scale-110">
-                        </div>
-                        <button id="btn-enter-game"
-                            class="relative w-full bg-primary text-on-primary font-headline font-black text-2xl px-12 py-5 rounded-full tracking-widest transform hover:-translate-y-1 active:scale-95 transition-all shadow-[0_20px_50px_rgba(253,192,3,0.3)]">
-                            开始探索
-                        </button>
-                        <div
-                            class="mt-4 font-headline font-bold text-[11px] tracking-[0.4em] text-on-surface-variant uppercase opacity-70">
-                            PRESS [ENTER] TO START
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Background Decorative Elements -->
-            <div class="absolute bottom-20 left-10 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -z-10"></div>
-            <div class="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
-        </main>
-
-
-    </div>
-
-
-
-    <!-- 视图二：地图页面 -->
-    <div id="map-view" class="view hidden">
-        <div class="status-bar">
-            <span>当前对局：人生Online</span>
-            <span>角色：模仿鹅</span>
-            <span id="game-status">状态：探索中</span>
+  <!-- 视图一：身份牌入口 (Terminal Hacker × Glassmorphism) -->
+  <div id="entry-view"
+    class="view active bg-background text-on-surface font-body overflow-y-auto overflow-x-hidden h-screen">
+    <!-- TopNavBar Component -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-10 py-6 bg-transparent pointer-events-none">
+      <div class="flex items-center gap-4 pointer-events-auto">
+        <span class="text-[#ffd16c] text-2xl font-black tracking-tighter">ABOUT ME</span>
+      </div>
+      <div class="flex items-center gap-3 pointer-events-auto">
+        <button
+          class="bg-surface-bright/50 px-4 py-2 rounded-full font-headline font-bold text-primary border border-outline-variant/20 hover:scale-105 active:scale-95 transition-all">
+          EN / 中
+        </button>
+      </div>
+    </nav>
+    <!-- Main Content: Game Lobby Landing -->
+    <main class="relative min-h-screen w-full flex flex-col items-center justify-start">
+      <!-- Ambient Background Scene -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-surface via-surface-container-low to-surface-container-lowest opacity-90">
         </div>
-
-        <div class="map-container" id="map-container">
-            <!-- 角色 -->
-            <div id="player-char" class="player-char">🦆</div>
-
-            <!-- 地图区域设定 -->
-            <div class="zone-grid">
-                <!-- 区域1：代码森林 -->
-                <div class="zone-card" data-zone="code" id="zone-code">
-                    <div class="zone-icon">🌲</div>
-                    <div class="zone-name">代码森林</div>
-                </div>
-
-                <!-- 区域2：深夜咖啡馆 -->
-                <div class="zone-card" data-zone="cafe" id="zone-cafe">
-                    <div class="zone-icon">☕</div>
-                    <div class="zone-name">深夜咖啡馆</div>
-                </div>
-
-                <!-- 区域3：成就殿堂 -->
-                <div class="zone-card" data-zone="achieve" id="zone-achieve">
-                    <div class="zone-icon">🏆</div>
-                    <div class="zone-name">成就殿堂</div>
-                </div>
+        <img alt="Background Scene" class="w-full h-full object-cover opacity-20 mix-blend-overlay"
+          data-alt="cinematic dark gaming lobby interior with neon yellow accents and architectural silhouettes in soft mist"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9BIiC4Pxsfib92_MIv3DzjPuNXVTpHZnNbOqDeZrPXR8J3M0QBTjB-0y9_-2v6NdfFZ3iCbEYAjN10m4tLcH-ZGFq6fqGS1JiSB060jK91zj2jWeM_i7gwKRcQAgQqeI3xOKelyR_OthuDtW9AmVIB7oP8z9P9ISk736da_n3EmLMV4qNd9EeG2-GKLjTRxv5giIKiQSRFku7wpuoo9RD3O2fCFI4NyaWTqAGjpOpDScbvSmYS5F6neDNk0XOrb-_S5T8faGamN8" />
+      </div>
+      <!-- Two-Column Layout Grid -->
+      <div class="relative z-10 w-full max-w-7xl px-8 grid grid-cols-12 gap-12 items-start min-h-full pt-20 pb-20">
+        <!-- Left Column: Character Photo -->
+        <div class="col-span-12 lg:col-span-5 flex flex-col items-center justify-center relative">
+          <!-- Stamped Title -->
+          <div class="text-center w-full z-20 mt-10 mb-8">
+            <h1
+              class="text-7xl font-headline font-black text-primary uppercase tracking-tighter stamped-text transform">
+              周雪彤
+            </h1>
+          </div>
+          <!-- Main Goose Character -->
+          <div
+            class="relative w-full max-w-xs goose-shadow transform hover:scale-105 transition-transform duration-500 cursor-pointer rounded-3xl overflow-hidden shadow-2xl border-2 border-primary/20">
+            <img alt="Central Goose Character" class="w-full h-auto object-cover"
+              data-alt="chunky cartoon goose character dressed in a yellow raincoat and matching rain hat, cinematic low-angle gaming character view"
+              src="pic/个人照片.JPG" />
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-48 h-8 bg-primary/20 blur-2xl rounded-full">
             </div>
-
-            <!-- 彩蛋装饰物 -->
-            <div class="easter-egg" style="top: 20%; left: 10%;" data-msg="这桶爆米花已经陪你看完 100 场直播了🍿">🍿</div>
-            <div class="easter-egg" style="bottom: 15%; right: 15%;" data-msg="这只呆鸭站在这里思考鸭生，不要打扰它！🐤">🐤</div>
-        </div>
-
-        <!-- 弹窗容器 -->
-        <div class="modal-overlay hidden" id="modal-overlay">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span id="modal-title" class="modal-title"></span>
-                    <button id="btn-close-modal" class="btn-close">×</button>
-                </div>
-                <div class="modal-body" id="modal-body">
-                    <!-- 内容动态注入 -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 数据存储 (用于模态框内容) -->
-    <template id="tpl-code">
-        <div class="content-block">
-            <h3>🎓 教育背景</h3>
-            <p><strong>香港大学</strong>｜数据科学硕士｜2024-2026<br>
-                <strong>北师香港浸会大学</strong>｜数据科学与大数据技术｜GPA 3.78/4.0（专业前10%）<br>
-                三次“校级一等奖学金”得主
+          </div>
+          <!-- Quote under photo -->
+          <div class="mt-8 px-4">
+            <p class="text-lg font-headline font-black text-primary italic leading-tight text-center drop-shadow-md">
+              "数据不会说谎，只是需要正确的解读方式。"
             </p>
-
-            <h3>💼 实战履历</h3>
-            <p><strong>百融云创｜金融科技部数据分析</strong><br>
-                - 端到端风控模型开发：从目标变量分析→6000+变量筛选→LightGBM/LR建模→PMML部署<br>
-                - 把KS从0.18提到0.21，AUC提升8%<br>
-                - 把单次模型迭代周期从5天缩短到2.5天，效率提升50%</p>
-            <p><strong>招商证券｜托管部统计分析</strong><br>
-                - 用Python+VBA处理900+基金数据，构建自动化报表<br>
-                - 把日常处理时长从90分钟压缩到20分钟，效率提升78%</p>
-
-            <h3>🏆 项目高光</h3>
-            <ul>
-                <li>Kaggle儿童睡眠检测｜Top 5%｜CenterNet+Transformer架构，AP 0.787</li>
-                <li>时序生物标志物检测｜AutoEncoder+LSTM，锁定40个核心肿瘤标志物</li>
-                <li>Wordle建模｜ARIMA+深度学习，MAPE 3.7%</li>
-            </ul>
-
-            <h3>🔧 技能树</h3>
-            <div class="tech-stack">Python · SQL · LightGBM · PyTorch · Scikit-learn · PMML · VBA · 端到端模型落地</div>
-
-            <h3 class="game-talk">📝 一句游戏黑话</h3>
-            <blockquote>“Debug就像在鹅鸭杀里找内鬼——明知道有，就是抓不到，抓到的时候会特别爽。”</blockquote>
+          </div>
         </div>
-    </template>
+        <!-- Right Column: Identity Card restructured -->
+        <div class="col-span-12 lg:col-span-7 flex flex-col items-center justify-start">
+          <!-- Label above the box -->
+          <p class="text-2xl font-headline font-bold text-primary tracking-[0.3em] mt-10 mb-6 drop-shadow-lg">
+            身份信息</p>
+          <div
+            class="w-full glass-panel p-10 rounded-lg border-2 border-primary/20 flex flex-col gap-8 shadow-2xl relative overflow-hidden group">
+            <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+              <span class="material-symbols-outlined text-8xl" data-icon="shield">shield</span>
+            </div>
+            <div class="flex items-center gap-6">
+              <div class="w-20 h-20 rounded-full border-4 border-primary overflow-hidden shadow-lg shadow-primary/20">
+                <img alt="Avatar" class="w-full h-full object-cover"
+                  data-alt="close-up of a stylized playful goose character illustration with a tiny detective hat"
+                  src="pic/个人照片.JPG" />
+              </div>
+              <div>
+                <h2 class="text-4xl font-headline font-black text-on-surface">模仿鹅 · 六边形战士形态</h2>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div class="space-y-4">
+                <h3
+                  class="font-headline font-bold text-primary text-base uppercase tracking-widest flex items-center gap-2 border-b border-primary/20 pb-2">
+                  能力描述
+                </h3>
+                <div class="skill-list space-y-6">
+                  <div class="flex gap-3">
+                    <span class="material-symbols-outlined text-secondary" data-icon="swap_horiz">swap_horiz</span>
+                    <div>
+                      <p class="text-xl font-black text-on-surface">模式切换</p>
+                      <p class="text-[13px] text-on-surface-variant leading-relaxed">
+                        能做数据分析，也能建机器学习模型。左手SQL取数，右手Python炼丹，中间还能写个SOP提效。</p>
+                    </div>
+                  </div>
 
-    <template id="tpl-cafe">
-        <div class="content-block">
-            <h3>🧩 身份标签</h3>
-            <p>ESTJ（总经理型人格）· 务实派 · 效率狂魔 · 奶茶重度用户 · 目标导向</p>
+                  <div class="flex gap-3">
+                    <span class="material-symbols-outlined text-secondary"
+                      data-icon="rocket_launch">rocket_launch</span>
+                    <div>
+                      <p class="text-xl font-black text-on-surface">工程落地</p>
+                      <p class="text-[13px] text-on-surface-variant leading-relaxed">
+                        从数据清洗到PMML部署，全链路掌控。把模型迭代周期从5天压缩到2.5天，效率提升50%，拒绝纸上谈兵。</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-3">
+                    <span class="material-symbols-outlined text-secondary" data-icon="psychology">psychology</span>
+                    <div>
+                      <p class="text-xl font-black text-on-surface">AI进化中</p>
+                      <p class="text-[13px] text-on-surface-variant leading-relaxed">
+                        正在向AI/LLM转型，把大模型装进技能背包。能数分能建模，肯干活愿当牛马，就差一个平台起飞。</p>
+                    </div>
+                  </div>
 
-            <h3>🎧 近期循环歌单</h3>
-            <ul>
-                <li>Lo-fi 学习歌单（写代码时）</li>
-                <li>告五人（放空时）</li>
-                <li>技术播客（通勤时）</li>
-            </ul>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <div class="space-y-4">
+                  <h3
+                    class="font-headline font-bold text-primary text-base uppercase tracking-widest flex items-center gap-2 border-b border-primary/20 pb-2">
+                    个人简介
+                  </h3>
+                  <p
+                    class="text-[15px] text-on-surface-variant leading-relaxed border-l-4 border-primary/40 pl-4 py-1 italic">
+                    一个能做数据分析、也能建机器学习模型的“双修选手”。相信数据的价值不在于算法多复杂，而在于能否挖出隐藏的模式、驱动真实的商业决策。<br /><br />
+                    港大硕士，本科三次一等奖学金。做过端到端风控模型，在Kaggle拿过银牌。<br /><br />
+                    具备从原始数据清洗到生产落地的全链路掌控力，正在向AI/LLM领域拓展。正在找<b>数据分析/数据科学/机器学习工程师</b>岗位，希望能用数据帮你解决真问题。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Start Exploration Button below the box -->
+          <div class="mt-12 w-full max-w-sm relative group text-center">
+            <div
+              class="absolute inset-0 bg-primary/30 blur-2xl group-hover:bg-primary/50 transition-all rounded-full scale-110">
+            </div>
+            <button id="btn-enter-game"
+              class="relative w-full bg-primary text-on-primary font-headline font-black text-2xl px-12 py-5 rounded-full tracking-widest transform hover:-translate-y-1 active:scale-95 transition-all shadow-[0_20px_50px_rgba(253,192,3,0.3)]">
+              开始探索
+            </button>
 
-            <h3>📚 最近在读</h3>
-            <p>《大模型应用开发》—— 为了转型<br>
-                《系统架构设计》—— 为了更好的工程落地</p>
-
-            <h3>💼 工作哲学</h3>
-            <ul>
-                <li>相信流程和效率：把5天的活压缩到2.5天，不是卷，是优化</li>
-                <li>讨厌无效会议：能用文档说清的，绝不开会</li>
-                <li>目标导向：定了KPI就想办法超额完成</li>
-            </ul>
-
-            <h3>🐱 关于我的一些碎片</h3>
-            <ul>
-                <li>最大的超能力：能从6000+个变量里找到有用的那个，但找不到自己的AirPods</li>
-                <li>快乐来源：模型收敛 + 代码跑通 + 咖啡的第一口</li>
-                <li>强迫症：变量命名必须规范，代码必须有注释</li>
-            </ul>
-
-            <h3 class="game-talk">✨ 最近的小确幸</h3>
-            <p>成功复现了一个LLM微调的demo，跑通的那一刻觉得：“我好像真的在转型了。”</p>
-            <blockquote>“在数据里找规律，在代码里找效率，在深夜找自己的节奏。”</blockquote>
+          </div>
         </div>
-    </template>
+      </div>
+      <!-- Background Decorative Elements -->
+      <div class="absolute bottom-20 left-10 w-64 h-64 bg-secondary/10 rounded-full blur-[100px] -z-10"></div>
+      <div class="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
+    </main>
 
-    <template id="tpl-achieve">
-        <div class="content-block">
-            <h3>🥇 学术成就</h3>
-            <ul>
-                <li>三次“校级一等奖学金”（本科，专业前10%）</li>
-                <li>香港大学数据科学硕士（在读）</li>
-                <li>Kaggle儿童睡眠检测赛银牌（Top 5%）</li>
-            </ul>
 
-            <h3>💼 职业里程碑</h3>
-            <ul>
-                <li>端到端风控模型落地：从0到1主导8个贷前风控模型的完整生命周期，最终通过PMML部署上线</li>
-                <li>效率革命：把模型迭代周期从5天压缩到2.5天，团队效率提升50%</li>
-                <li>自动化管道搭建：把手工建模流程整合成“一键式”生成，从此告别重复劳动</li>
-            </ul>
+  </div>
 
-            <h3>🔬 技术突破</h3>
-            <ul>
-                <li>时序生物标志物检测：用AutoEncoder+LSTM捕捉肿瘤早期信号，锁定40个核心标志物，成果获生物学验证</li>
-                <li>Wordle难度建模：用KL散度还原玩家猜测分布，成功构建3级难度评估准则</li>
-            </ul>
 
-            <h3>🌟 AI评价（来自面试官）</h3>
-            <blockquote>“公司苦苦寻找的六边形战士。具备理论深度+工程落地+业务转化的黄金三角。在AutoML时代，他展现出的重构问题与跨界抽象能力，是人类数据科学家最核心且不可替代的护城河。”
-            </blockquote>
 
-            <h3>🚀 正在解锁的成就</h3>
-            <ul>
-                <li>向AI/LLM转型中：正在学大模型，做AI</li>
-                <li>找工作ing：希望能给个机会</li>
-                <li>很多idea想变现：就差一个平台</li>
-            </ul>
+  <!-- 视图二：地图页面 -->
+  <div id="map-view" class="view hidden relative w-full h-full">
 
-            <h3 class="game-talk">💬 关于成就</h3>
-            <blockquote>“最大的成就不是拿了多少奖，而是每次遇到新问题，我都知道自己能搞定——哪怕需要换一个身份。”</blockquote>
+    <!-- TopNavBar Implementation -->
+    <!-- TopNavBar Implementation -->
+    <nav
+      class="fixed top-0 left-0 w-full z-50 flex justify-between items-start px-10 py-6 bg-transparent pointer-events-none">
+      <div class="flex items-center gap-4 pointer-events-auto mt-2">
+        <span class="text-[#ffd16c] text-2xl font-black tracking-tighter">ABOUT ME</span>
+      </div>
+      <div class="flex flex-col items-end gap-3 pointer-events-auto">
+        <div class="flex items-center gap-3">
+          <button id="btn-return-entry"
+            class="bg-primary/10 border border-primary/30 text-primary px-4 py-2 rounded-full font-headline font-bold tracking-wider hover:bg-primary/20 transition-all text-sm flex items-center gap-2">
+            <span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+            返回入口
+          </button>
+          <button
+            class="bg-surface-bright/50 px-4 py-2 rounded-full font-headline font-bold text-primary border border-outline-variant/20 hover:scale-105 active:scale-95 transition-all">
+            EN / 中
+          </button>
         </div>
-    </template>
+        <!-- Info Toggle Button -->
+        <button
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-primary/20 border border-primary/40 text-primary hover:bg-primary hover:text-surface transition-all shadow-[0_0_15px_rgba(255,209,108,0.2)] mr-2"
+          onclick="document.getElementById('info-card').classList.toggle('hidden')">
+          <span class="material-symbols-outlined text-2xl" data-icon="info">info</span>
+        </button>
+      </div>
+    </nav>
+    <!-- Player Profile Pop-up (Stylized Game Card) -->
+    <div class="info-modal hidden fixed top-32 right-10 w-80 z-50" id="info-card">
+      <div
+        class="bg-surface-container-high/95 backdrop-blur-xl border border-primary/20 rounded-[2.5rem] p-6 shadow-[0_32px_64px_rgba(0,0,0,0.8)] overflow-hidden relative">
+        <!-- Card Decoration -->
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
+        <div class="relative z-10">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-surface" data-icon="account_circle">account_circle</span>
+            </div>
+            <div>
+              <h4 class="font-headline font-black text-primary uppercase tracking-tighter">Player Profile</h4>
+              <p class="text-[10px] text-on-surface-variant font-bold uppercase tracking-widest">ID: VANGUARD_01</p>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <!-- MBTI Section -->
+            <div class="p-4 bg-surface-container-lowest/50 rounded-2xl border border-outline-variant/10">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest">Core
+                  Personality</span>
+                <span
+                  class="px-2 py-0.5 rounded-full bg-secondary/20 text-secondary text-[10px] font-black uppercase">MBTI</span>
+              </div>
+              <h5 class="text-xl font-headline font-extrabold text-on-surface tracking-tight">ENTJ</h5>
+              <p class="text-xs text-primary font-bold italic uppercase">"The Commander"</p>
+            </div>
+            <!-- Hobbies Section -->
+            <div class="space-y-3">
+              <span class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest px-1">Interests
+                &amp; Passion</span>
+              <div class="flex flex-wrap gap-2">
+                <div
+                  class="px-3 py-1.5 rounded-full bg-surface-variant border border-outline-variant/20 text-[11px] font-bold text-on-surface">
+                  Goose Goose Duck</div>
+                <div
+                  class="px-3 py-1.5 rounded-full bg-surface-variant border border-outline-variant/20 text-[11px] font-bold text-on-surface">
+                  Data Visualization</div>
+                <div
+                  class="px-3 py-1.5 rounded-full bg-surface-variant border border-outline-variant/20 text-[11px] font-bold text-on-surface">
+                  Strategic Gaming</div>
+                <div
+                  class="px-3 py-1.5 rounded-full bg-surface-variant border border-outline-variant/20 text-[11px] font-bold text-on-surface">
+                  Hiking</div>
+              </div>
+            </div>
+            <!-- Extra Stats -->
+            <div class="pt-4 border-t border-outline-variant/20 flex justify-between">
+              <div class="text-center">
+                <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest">Strategy</p>
+                <p class="text-lg font-headline font-bold text-primary">S+</p>
+              </div>
+              <div class="text-center">
+                <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest">Analytics</p>
+                <p class="text-lg font-headline font-bold text-primary">A</p>
+              </div>
+              <div class="text-center">
+                <p class="text-[10px] font-black text-on-surface-variant uppercase tracking-widest">Exploration</p>
+                <p class="text-lg font-headline font-bold text-primary">B+</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Exploration Canvas -->
+    <main class="relative w-full h-screen overflow-hidden map-texture flex items-center justify-center pt-20">
+      <!-- Background Elements (Faint World Map) -->
+      <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <img alt="faint world map sketch on dark parchment" class="w-full h-full object-cover mix-blend-luminosity"
+          data-alt="abstract stylized world map outline with geometric ley lines and topographic contours on a deep charcoal background"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAYar-95wx1boZztQw22DIldM_DtGjKRK2bwtclFvkv-y6PNa82h4gaYH5gDxA8crGEev6WK9jkLu9ucJHGotIItwMIllSqT06bwNtTKkk6EA1ugBvJroVpVFcVkCPa9r0SsX7eXmvFNeOEQ3esy9ftYRfREB9tI_DCZn8sBG1PdliEiaXn5UiBhWj9tLLBrEYHv9nGU1JIQvniRg_YFMVKaIfo-IP2qyGFAgg6TZ3hS8wcUxrbYO-arR6YlTeVzszD1B3elEpn9Y" />
+      </div>
+      <!-- The Skill Map: Landmark Locations (Asymmetric Layout) -->
+      <div class="relative w-full h-full max-w-7xl mx-auto z-10 p-10">
+        <!-- Automation Valley - Repositioned -->
+        <div class="absolute top-[22%] left-[50%] -translate-x-1/2 group landmark-node cursor-pointer"
+          data-zone="automation">
+          <div
+            class="bg-surface-container-high/80 backdrop-blur-md p-6 rounded-xl border border-outline-variant/10 shadow-2xl group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-4 mx-auto shadow-[0_0_20px_rgba(255,209,108,0.3)]">
+              <span class="material-symbols-outlined text-surface text-4xl"
+                data-icon="settings_input_component">settings_input_component</span>
+            </div>
+            <h3 class="font-headline font-extrabold text-primary text-center uppercase tracking-tight">自动化之谷
+            </h3>
+            <p class="text-[10px] text-on-surface-variant text-center mt-1 uppercase tracking-widest">
+              Automation Valley</p>
+          </div>
+        </div>
+        <!-- Algorithm Armory -->
+        <div class="absolute top-[45%] left-[25%] group landmark-node cursor-pointer" data-zone="algorithm">
+          <div
+            class="bg-surface-container-high/80 backdrop-blur-md p-6 rounded-xl border border-outline-variant/10 shadow-2xl group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-16 h-16 bg-[#a8a9ad] rounded-full flex items-center justify-center mb-4 mx-auto shadow-[0_0_20px_rgba(168,169,173,0.3)]">
+              <span class="material-symbols-outlined text-surface text-4xl" data-icon="swords">swords</span>
+            </div>
+            <h3 class="font-headline font-extrabold text-on-surface text-center uppercase tracking-tight">算法军械库
+            </h3>
+            <p class="text-[10px] text-on-surface-variant text-center mt-1 uppercase tracking-widest">
+              Algorithm Armory</p>
+          </div>
+        </div>
+        <!-- Business Fortress -->
+        <div class="absolute bottom-[20%] left-[45%] group landmark-node cursor-pointer" data-zone="business">
+          <div
+            class="bg-surface-container-high/80 backdrop-blur-md p-6 rounded-xl border border-outline-variant/10 shadow-2xl group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-16 h-16 bg-primary-fixed-dim rounded-full flex items-center justify-center mb-4 mx-auto shadow-[0_0_20px_rgba(253,192,3,0.2)]">
+              <span class="material-symbols-outlined text-surface text-4xl" data-icon="fort">fort</span>
+            </div>
+            <h3 class="font-headline font-extrabold text-primary text-center uppercase tracking-tight">业务堡垒</h3>
+            <p class="text-[10px] text-on-surface-variant text-center mt-1 uppercase tracking-widest">Business
+              Fortress</p>
+          </div>
+        </div>
+        <!-- Cloud City -->
+        <div class="absolute top-[20%] right-[10%] group landmark-node cursor-pointer" data-zone="cloud">
+          <div
+            class="bg-surface-container-high/80 backdrop-blur-md p-6 rounded-xl border border-outline-variant/10 shadow-2xl group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-20 h-20 bg-primary-container rounded-full flex items-center justify-center mb-4 mx-auto shadow-[0_0_30px_rgba(253,192,3,0.4)]">
+              <div class="flex flex-col items-center">
+                <span class="material-symbols-outlined text-on-primary-container text-4xl -mb-1"
+                  data-icon="cloud">cloud</span>
+                <span class="material-symbols-outlined text-on-primary-container text-2xl"
+                  data-icon="power">power</span>
+              </div>
+            </div>
+            <h3 class="font-headline font-extrabold text-primary text-center text-lg uppercase tracking-tight">
+              工程云端之城</h3>
+            <p class="text-[10px] text-on-surface-variant text-center mt-1 uppercase tracking-widest">
+              Engineering Cloud City</p>
+          </div>
+        </div>
+        <!-- Crossover Highlands -->
+        <div class="absolute bottom-[35%] right-[25%] group landmark-node cursor-pointer" data-zone="crossover">
+          <div
+            class="bg-surface-container-high/80 backdrop-blur-md p-6 rounded-xl border border-outline-variant/10 shadow-2xl group-hover:scale-110 transition-transform duration-300">
+            <div
+              class="w-16 h-16 bg-surface-bright rounded-full flex items-center justify-center mb-4 mx-auto border-2 border-primary">
+              <span class="material-symbols-outlined text-primary text-4xl" data-icon="terrain">terrain</span>
+            </div>
+            <h3 class="font-headline font-extrabold text-on-surface text-center uppercase tracking-tight">跨界高地
+            </h3>
+            <p class="text-[10px] text-on-surface-variant text-center mt-1 uppercase tracking-widest">
+              Crossover Highlands</p>
+          </div>
+        </div>
+        <!-- Floating Task List / Quest Log -->
+        <div class="fixed top-32 left-10 w-72 z-20">
+          <div
+            class="bg-surface-container-low/90 backdrop-blur-lg border-l-4 border-primary p-6 rounded-r-2xl shadow-2xl">
+            <div class="flex items-center gap-2 mb-6">
+              <span class="material-symbols-outlined text-primary" data-icon="assignment">assignment</span>
+              <h2 class="font-headline font-black text-xl uppercase tracking-tighter">任务栏 (QUESTS)</h2>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3 group">
+                <div
+                  class="mt-1 w-5 h-5 rounded border-2 border-primary flex items-center justify-center bg-primary text-surface">
+                  <span class="material-symbols-outlined text-[16px] font-bold" data-icon="check">check</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Master Python
+                    &amp; CI/CD</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Automation Valley</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 group">
+                <div
+                  class="mt-1 w-5 h-5 rounded border-2 border-outline-variant group-hover:border-primary transition-colors">
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Optimize Graph
+                    Algos</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Algorithm Armory</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 group">
+                <div
+                  class="mt-1 w-5 h-5 rounded border-2 border-primary flex items-center justify-center bg-primary text-surface">
+                  <span class="material-symbols-outlined text-[16px] font-bold" data-icon="check">check</span>
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Deploy
+                    Kubernetes Cluster</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Cloud City</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3 group">
+                <div
+                  class="mt-1 w-5 h-5 rounded border-2 border-outline-variant group-hover:border-primary transition-colors">
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">Analyze Market
+                    Trends</p>
+                  <p class="text-[10px] text-on-surface-variant uppercase tracking-widest">Business Fortress</p>
+                </div>
+              </li>
+            </ul>
+            <div class="mt-8 pt-4 border-t border-outline-variant/30">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Level
+                  Progress</span>
+                <span class="text-[10px] font-bold text-primary">85%</span>
+              </div>
+              <div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+                <div class="h-full bg-primary w-[85%]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-    <script src="script.js"></script>
+    <!-- BottomNavBar Implementation Removed -->
+  </div>
+
+
+  <div id="skill-modal"
+    class="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 hidden">
+    <div
+      class="relative w-full max-w-2xl bg-surface-container-low p-10 rounded-xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] border-t border-outline-variant/30">
+      <button id="btn-close-skill"
+        class="absolute top-6 right-6 text-on-surface-variant hover:text-primary transition-colors hover:rotate-90 duration-300">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+      <h2 id="modal-skill-title"
+        class="text-primary font-headline font-black text-2xl mb-6 flex items-center gap-3 border-b border-outline-variant/20 pb-4">
+      </h2>
+      <div id="modal-skill-body" class="space-y-8 max-h-[60vh] overflow-y-auto pr-4 custom-scrollbar">
+      </div>
+    </div>
+  </div>
+
+
+  <template id="tpl-automation">
+    <section>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary text-xl">handyman</span>
+        <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【新手装备】</h2>
+      </div>
+      <div class="bg-surface-container-high rounded-lg p-6 border-l-4 border-primary shadow-lg mb-6">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-on-surface font-bold text-base">VBA + Excel 基金指数跟踪系统</h3>
+          <span
+            class="bg-primary/20 text-primary px-2 py-0.5 rounded text-[10px] font-black tracking-widest">招商证券托管部</span>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">独立开发自动化工具，实现数据抓取、计算、报表生成全自动。</p>
+        <div class="flex gap-6">
+          <div class="flex flex-col">
+            <span class="text-[10px] uppercase font-bold text-on-surface-variant">日常耗时</span>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-on-surface">90m</span>
+              <span class="text-xs text-primary">→</span>
+              <span class="text-lg font-black text-on-surface">20m</span>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] uppercase font-bold text-on-surface-variant">效率提升</span>
+            <span class="text-2xl font-black text-primary">78%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface-container-high rounded-lg p-6 border-l-4 border-secondary shadow-lg mb-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-secondary text-xl">hub</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【进阶管道】</h2>
+        </div>
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-on-surface font-bold text-base">机器学习 SOP 自动化模型管道</h3>
+          <span
+            class="bg-secondary/20 text-secondary px-2 py-0.5 rounded text-[10px] font-black tracking-widest">百融云创</span>
+        </div>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-4">整合特征筛选、模型训练、评估报告为“一键式”生成流程。</p>
+        <div class="flex gap-6">
+          <div class="flex flex-col">
+            <span class="text-[10px] uppercase font-bold text-on-surface-variant">单次迭代</span>
+            <div class="flex items-baseline gap-1">
+              <span class="text-lg font-black text-on-surface">5d</span>
+              <span class="text-xs text-secondary">→</span>
+              <span class="text-lg font-black text-on-surface">2.5d</span>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[10px] uppercase font-bold text-on-surface-variant">效率提升</span>
+            <span class="text-2xl font-black text-primary">50%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6">
+      <section>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-primary text-xl">auto_fix_high</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【解锁技能】</h2>
+        </div>
+        <div class="bg-surface-container-highest border border-outline-variant/10 p-5 rounded-lg h-full">
+          <p class="text-sm font-bold text-on-surface leading-snug">“凡重复必自动化”</p>
+          <p class="text-[11px] text-on-surface-variant mt-2 italic">将日常工作抽象成系统，拒绝无效加班。</p>
+        </div>
+      </section>
+      <section>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-tertiary text-xl">military_tech</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【战利品】</h2>
+        </div>
+        <div
+          class="bg-surface-container-highest border border-outline-variant/10 p-5 rounded-lg h-full relative overflow-hidden">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-primary text-sm">⚡</span>
+            <p class="text-sm font-bold text-on-surface">自动化之魂</p>
+          </div>
+          <p class="text-[11px] text-on-surface-variant leading-tight">从此看见重复劳动就想写脚本。</p>
+
+        </div>
+      </section>
+    </div>
+  </template>
+
+  <template id="tpl-algorithm">
+    <section>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary text-xl">handyman</span>
+        <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【武器收集】</h2>
+      </div>
+      <p class="text-sm text-on-surface-variant mb-4">在 Wordle 单词游戏建模项目中，针对不同问题收集了三类武器：</p>
+      <div class="space-y-4 mb-6">
+        <div class="bg-surface-container-high rounded-lg p-5 border-l-4 border-primary shadow-lg">
+          <h3 class="text-on-surface font-bold text-sm mb-1">ARIMA（统计学武器）</h3>
+          <p class="text-[12px] text-on-surface-variant">用于玩家流量预测，滑动窗口滤除噪声，MAPE 低至 3.7%</p>
+        </div>
+        <div class="bg-surface-container-high rounded-lg p-5 border-l-4 border-secondary shadow-lg">
+          <h3 class="text-on-surface font-bold text-sm mb-1">随机森林（机器学习武器）</h3>
+          <p class="text-[12px] text-on-surface-variant">用于难度归因，提取词频等5类特征，构建三级难度标准</p>
+        </div>
+        <div class="bg-surface-container-high rounded-lg p-5 border-l-4 border-tertiary shadow-lg">
+          <h3 class="text-on-surface font-bold text-sm mb-1">Word-Embedding + LSTM（深度学习武器）</h3>
+          <p class="text-[12px] text-on-surface-variant">建模用户行为分布，KL 散度降至 0.0479，准确还原猜测步数分布</p>
+        </div>
+      </div>
+    </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6">
+      <section>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-primary text-xl">auto_fix_high</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【精英挑战】</h2>
+        </div>
+        <div class="bg-surface-container-highest border border-outline-variant/10 p-5 rounded-lg h-full">
+          <ul class="text-[12px] text-on-surface-variant space-y-2 mt-2">
+            <li><span class="text-primary font-bold">线性/可解释</span> → 统计学武器</li>
+            <li><span class="text-secondary font-bold">高维非线性</span> → 机器学习武器</li>
+            <li><span class="text-tertiary font-bold">序列/语义</span> → 深度学习武器</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-tertiary text-xl">military_tech</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【战利品】</h2>
+        </div>
+        <div
+          class="bg-surface-container-highest border border-outline-variant/10 p-5 rounded-lg h-full relative overflow-hidden">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-primary text-sm">🔍</span>
+            <p class="text-sm font-bold text-on-surface">武器大师徽章</p>
+          </div>
+          <p class="text-[11px] text-on-surface-variant leading-tight">不再迷信复杂算法，只信最合适的工具。</p>
+
+        </div>
+      </section>
+    </div>
+  </template>
+
+  <template id="tpl-business">
+    <section>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary text-xl">handyman</span>
+        <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【百融云创大作战】</h2>
+      </div>
+      <div class="bg-surface-container-high rounded-lg p-5 border-l-4 border-primary shadow-lg mb-6">
+        <div class="flex gap-4 items-center border-b border-outline-variant/20 pb-3 mb-3">
+          <div class="text-[12px] text-on-surface-variant"><strong>场景:</strong> 贷前风控</div>
+          <div class="text-[12px] text-on-surface-variant"><strong>变量:</strong> 上千</div>
+          <div class="text-[12px] text-on-surface-variant"><strong>目标:</strong> 高精度 & 透明黑板</div>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <h4 class="text-sm font-bold text-secondary">第一回合：算法挖掘</h4>
+            <p class="text-[12px] text-on-surface-variant">用 LightGBM 强力挖掘非线性关系，KS提升至0.21，AUC提升8%</p>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-primary">第二回合：业务落地</h4>
+            <p class="text-[12px] text-on-surface-variant">为满足可解释性，主动降级开发逻辑回归评分卡，通过分箱优化确保变量方向符合业务认知，KS稳定0.19+</p>
+          </div>
+          <div>
+            <h4 class="text-sm font-bold text-tertiary">终极 Buff：提效网络</h4>
+            <p class="text-[12px] text-on-surface-variant">构建自动化模型管道，将模型迭代周期从5天压缩到2.5天，策略上线加速</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="grid grid-cols-1 gap-6 pb-6">
+      <section>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-tertiary text-xl">military_tech</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【战利品】</h2>
+        </div>
+        <div
+          class="bg-surface-container-highest border border-outline-variant/10 p-5 rounded-lg w-full relative overflow-hidden">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-primary text-sm">⚖️</span>
+            <p class="text-sm font-bold text-on-surface">平衡者之证</p>
+          </div>
+          <p class="text-[12px] text-on-surface-variant leading-tight">既能用复杂模型冲高精度，也能用简单模型讲清楚业务逻辑。</p>
+
+        </div>
+      </section>
+    </div>
+  </template>
+
+  <template id="tpl-crossover">
+    <section>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary text-xl">handyman</span>
+        <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【降维打击战役】</h2>
+      </div>
+      <div class="space-y-4 mb-6">
+        <div class="bg-surface-container-high rounded-lg p-5 border-l-4 border-primary shadow-lg">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-on-surface font-bold text-sm">睡眠监测之战 (Kaggle Top 5%)</h3>
+          </div>
+          <p class="text-[12px] font-bold text-secondary mb-1">重构思路：二分类 转换为 目标检测</p>
+          <ul class="text-[12px] text-on-surface-variant space-y-1 ml-4 list-disc">
+            <li><strong>架构：</strong> CenterNet + Transformer，用热力图回归替代二分类，解决边界模糊</li>
+            <li><strong>后处理：</strong> 引入时序 NMS 消除冗余预测框</li>
+            <li><strong>成果：</strong> 线上 AP 0.787，Kaggle 银牌</li>
+          </ul>
+        </div>
+        <div class="bg-surface-container-high rounded-lg p-5 border-l-4 border-secondary shadow-lg">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-on-surface font-bold text-sm">生命临界点探寻</h3>
+          </div>
+          <ul class="text-[12px] text-on-surface-variant space-y-1 ml-4 list-disc">
+            <li><strong>右手算法：</strong> AutoEncoder + LSTM 构建异常检测模型</li>
+            <li><strong>左手物理：</strong> 引入动力学系统理论计算李雅普诺夫指数</li>
+            <li><strong>成果：</strong> 锁定 40 个核心标志物，获生物学高度证实</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <div class="grid grid-cols-1 gap-6 pb-6">
+      <section>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-tertiary text-xl">military_tech</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【战利品】</h2>
+        </div>
+        <div
+          class="bg-surface-container-highest border border-outline-variant/10 p-5 rounded-lg w-full relative overflow-hidden">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-primary text-sm">🔭</span>
+            <p class="text-sm font-bold text-on-surface">跨界望远镜</p>
+          </div>
+          <p class="text-[12px] text-on-surface-variant leading-tight">看见不同领域的共性，用A领域的解法解决B领域的难题。</p>
+
+        </div>
+      </section>
+    </div>
+  </template>
+
+  <template id="tpl-cloud">
+    <section>
+      <div class="flex items-center gap-2 mb-3">
+        <span class="material-symbols-outlined text-primary text-xl">handyman</span>
+        <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【端到端交付】</h2>
+      </div>
+      <div class="bg-surface-container-high rounded-lg p-5 border-l-4 border-primary shadow-lg mb-6">
+        <h3 class="text-on-surface font-bold text-sm mb-2">模型工程化部署</h3>
+        <p class="text-[12px] text-on-surface-variant mb-4">主导模型从实验环境落地到生产网络，将最终模型转化为 PMML
+          格式完成线上部署，并编写完整部署文档赋能策略开发，提供稳定可靠的线上评分服务。</p>
+
+        <h4
+          class="text-xs font-bold text-on-surface mb-2 uppercase tracking-widest border-t border-outline-variant/20 pt-2">
+          全链路能力清单</h4>
+        <div class="grid grid-cols-2 gap-2 text-[12px] text-on-surface-variant">
+          <div class="flex items-center gap-2"><span class="text-primary">✓</span> 原始清洗(上千)</div>
+          <div class="flex items-center gap-2"><span class="text-primary">✓</span> 特征工程(IV/稳定)</div>
+          <div class="flex items-center gap-2"><span class="text-primary">✓</span> 训练(LGB/LR/DL)</div>
+          <div class="flex items-center gap-2"><span class="text-primary">✓</span> 模型评估(KS/AUC)</div>
+        </div>
+      </div>
+    </section>
+    <div class="grid grid-cols-1 gap-6 pb-6">
+      <section>
+        <div class="flex items-center gap-2 mb-3">
+          <span class="material-symbols-outlined text-tertiary text-xl">military_tech</span>
+          <h2 class="font-headline font-black text-sm uppercase tracking-widest text-on-surface-variant">【战利品】</h2>
+        </div>
+        <div
+          class="bg-surface-container-highest border border-outline-variant/10 p-5 rounded-lg w-full relative overflow-hidden">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-primary text-sm">☁️</span>
+            <p class="text-sm font-bold text-on-surface">云端信标</p>
+          </div>
+          <p class="text-[12px] text-on-surface-variant leading-tight">能做实验，更能把它变成可以用的产品。</p>
+
+        </div>
+      </section>
+    </div>
+  </template>
+
+  </div>
+
+  <script src="script.js?v=2"></script>
 </body>
 
 </html>
