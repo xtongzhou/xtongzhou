@@ -35,9 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Player Character
+    const playerChar = document.getElementById('player-char');
+    let isMoving = false;
+
     // Interactive Nodes
     landmarkNodes.forEach(node => {
         node.addEventListener('click', () => {
+            console.log('Landmark node clicked:', node.getAttribute('data-zone'));
+            
             const zone = node.getAttribute('data-zone');
             let iconText = '';
             let titleText = '';
@@ -47,16 +53,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const iconSpan = node.querySelector('.material-symbols-outlined');
             if (iconSpan) iconText = iconSpan.innerText;
 
-            modalSkillTitle.innerHTML = `<span class="material-symbols-outlined">${iconText}</span> ${titleText}`;
+            console.log('Showing modal for zone:', zone);
+            if (modalSkillTitle) {
+                modalSkillTitle.innerHTML = `<span class="material-symbols-outlined">${iconText}</span> ${titleText}`;
+            }
             
             const tpl = document.getElementById(`tpl-${zone}`);
-            if (tpl) {
-                modalSkillBody.innerHTML = tpl.innerHTML;
-            } else {
-                modalSkillBody.innerHTML = '<p class="text-on-surface">Data Not Found.</p>';
+            if (modalSkillBody) {
+                if (tpl) {
+                    modalSkillBody.innerHTML = tpl.innerHTML;
+                } else {
+                    modalSkillBody.innerHTML = '<p class="text-on-surface">Data Not Found.</p>';
+                }
             }
 
-            skillModal.classList.remove('hidden');
+            if (skillModal) {
+                skillModal.classList.remove('hidden');
+            }
         });
     });
 
