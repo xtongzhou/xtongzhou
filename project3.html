@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#b92902",
+                    "on-surface": "#eeeef0",
+                    "on-background": "#eeeef0",
+                    "surface-dim": "#0c0e10",
+                    "outline-variant": "#46484a",
+                    "on-surface-variant": "#aaabad",
+                    "inverse-primary": "#795a00",
+                    "surface-variant": "#232629",
+                    "on-primary-container": "#553e00",
+                    "surface-container": "#171a1c",
+                    "primary-fixed": "#fdc003",
+                    "on-secondary-fixed-variant": "#a30040",
+                    "on-tertiary-fixed-variant": "#7a0003",
+                    "outline": "#747578",
+                    "on-tertiary-fixed": "#3a0001",
+                    "surface-tint": "#ffd16c",
+                    "secondary-container": "#bc004b",
+                    "inverse-surface": "#f9f9fc",
+                    "tertiary-fixed-dim": "#ff7c6c",
+                    "surface-container-highest": "#232629",
+                    "on-primary": "#604700",
+                    "error-dim": "#d53d18",
+                    "on-error": "#450900",
+                    "surface-container-lowest": "#000000",
+                    "surface": "#0c0e10",
+                    "on-tertiary": "#4a0001",
+                    "secondary-fixed-dim": "#ffaeba",
+                    "secondary-dim": "#e2165f",
+                    "primary-fixed-dim": "#ecb200",
+                    "tertiary-fixed": "#ff9385",
+                    "secondary": "#ff6d8d",
+                    "surface-bright": "#292c2f",
+                    "on-secondary": "#480018",
+                    "primary-container": "#fdc003",
+                    "on-tertiary-container": "#110000",
+                    "error": "#ff7351",
+                    "tertiary-container": "#fd493b",
+                    "secondary-fixed": "#ffc2ca",
+                    "on-secondary-container": "#fff6f5",
+                    "tertiary-dim": "#ff7161",
+                    "on-error-container": "#ffd2c8",
+                    "background": "#0c0e10",
+                    "primary": "#ffd16c",
+                    "on-primary-fixed-variant": "#604700",
+                    "inverse-on-surface": "#535557",
+                    "on-secondary-fixed": "#6e0028",
+                    "surface-container-low": "#111416",
+                    "on-primary-fixed": "#3d2b00",
+                    "tertiary": "#ff7161",
+                    "primary-dim": "#ecb200",
+                    "surface-container-high": "#1d2022"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        body { font-family: 'Be Vietnam Pro', 'PingFang SC', 'Microsoft YaHei', sans-serif; background-color: #0c0e10; color: #eeeef0; }
+        .headline-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-panel { background: rgba(41, 44, 47, 0.6); backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+    <script>
+        // Language toggle functionality
+        function toggleLanguage() {
+            const currentLang = localStorage.getItem('language') || 'zh';
+            const newLang = currentLang === 'zh' ? 'en' : 'zh';
+            localStorage.setItem('language', newLang);
+            updateLanguage(newLang);
+        }
+
+        function updateLanguage(lang) {
+            if (lang === 'en') {
+                // English content
+                document.querySelector('.text-label-md').textContent = 'Health Technology · Biomarker Mining';
+                document.querySelector('h1').textContent = 'Temporal Biomarker Detection';
+                document.querySelector('.font-\[\'Be_Vietnam_Pro\'\]').textContent = '2024.05 – 2024.12';
+                
+                // Tech stack
+                document.querySelectorAll('.bg-surface-container-highest')[0].textContent = 'AutoEncoder';
+                document.querySelectorAll('.bg-surface-container-highest')[1].textContent = 'LSTM';
+                document.querySelectorAll('.bg-surface-container-highest')[2].textContent = 'Lyapunov Exponent';
+                document.querySelectorAll('.bg-surface-container-highest')[3].textContent = 'Python';
+                
+                // Metrics
+                document.querySelectorAll('.text-neutral-400')[1].textContent = 'Biomarkers Identified';
+                document.querySelectorAll('.text-neutral-400')[2].textContent = 'Validation Success Rate';
+                
+                // Background & Challenges
+                document.querySelector('#strengths h3').textContent = 'Project Background';
+                document.querySelector('#strengths p').textContent = 'Research project focused on mining temporal biomarkers from physiological time-series data for early disease detection.';
+                document.querySelectorAll('#strengths li')[0].querySelector('span:last-child').textContent = 'Time-series anomaly detection';
+                document.querySelectorAll('#strengths li')[1].querySelector('span:last-child').textContent = 'Biological validation';
+                
+                // Solution Panel
+                document.querySelectorAll('.bg-surface-container-high h3')[0].textContent = 'Core Solutions';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[0].textContent = 'AutoEncoder Anomaly Detection';
+                document.querySelectorAll('.bg-surface-container-lowest p')[0].textContent = 'Implemented AutoEncoder neural network for unsupervised anomaly detection in physiological time-series data.';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[1].textContent = 'LSTM Temporal Modeling';
+                document.querySelectorAll('.bg-surface-container-lowest p')[1].textContent = 'Used LSTM networks to capture temporal dependencies and predict future biomarker values.';
+                document.querySelector('.bg-tertiary\/5 h4').textContent = 'Lyapunov Exponent Analysis';
+                document.querySelector('.bg-tertiary\/5 p').textContent = 'Applied Lyapunov exponent analysis to identify critical transition points in disease progression, enabling early intervention.';
+                
+                // Impact & Value
+                document.querySelectorAll('.bg-surface-container h3')[1].textContent = 'Research Impact';
+                document.querySelectorAll('.bg-surface-container p')[1].textContent = 'Successfully identified 40 tumor biomarkers and obtained biological validation, demonstrating potential for early disease detection.';
+                
+                // Footer
+                document.querySelector('footer p:nth-of-type(1)').textContent = 'Data doesn\'t lie, it just needs the right interpretation.';
+                document.querySelector('footer p:nth-of-type(2)').textContent = 'Contact - xtongzhou@163.com';
+                
+                // Navigation
+                document.querySelector('.group-hover\:text-primary').textContent = 'Back to Home';
+                document.querySelector('button').textContent = '中/EN';
+            } else {
+                // Chinese content
+                document.querySelector('.text-label-md').textContent = '健康科技 · 生物标志物挖掘';
+                document.querySelector('h1').textContent = '时序生物标志物检测';
+                document.querySelector('.font-\[\'Be_Vietnam_Pro\'\]').textContent = '2024.05 – 2024.12';
+                
+                // Tech stack
+                document.querySelectorAll('.bg-surface-container-highest')[0].textContent = 'AutoEncoder';
+                document.querySelectorAll('.bg-surface-container-highest')[1].textContent = 'LSTM';
+                document.querySelectorAll('.bg-surface-container-highest')[2].textContent = '李雅普诺夫指数';
+                document.querySelectorAll('.bg-surface-container-highest')[3].textContent = 'Python';
+                
+                // Metrics
+                document.querySelectorAll('.text-neutral-400')[1].textContent = '识别标志物';
+                document.querySelectorAll('.text-neutral-400')[2].textContent = '验证成功率';
+                
+                // Background & Challenges
+                document.querySelector('#strengths h3').textContent = '项目背景';
+                document.querySelector('#strengths p').textContent = '研究项目，专注于从生理时间序列数据中挖掘时序生物标志物，用于疾病早期检测。';
+                document.querySelectorAll('#strengths li')[0].querySelector('span:last-child').textContent = '时间序列异常检测';
+                document.querySelectorAll('#strengths li')[1].querySelector('span:last-child').textContent = '生物学验证';
+                
+                // Solution Panel
+                document.querySelectorAll('.bg-surface-container-high h3')[0].textContent = '核心解决方案';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[0].textContent = 'AutoEncoder异常检测';
+                document.querySelectorAll('.bg-surface-container-lowest p')[0].textContent = '实现AutoEncoder神经网络，用于生理时间序列数据的无监督异常检测。';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[1].textContent = 'LSTM时序建模';
+                document.querySelectorAll('.bg-surface-container-lowest p')[1].textContent = '使用LSTM网络捕捉时间依赖关系，预测未来生物标志物值。';
+                document.querySelector('.bg-tertiary\/5 h4').textContent = '李雅普诺夫指数分析';
+                document.querySelector('.bg-tertiary\/5 p').textContent = '应用李雅普诺夫指数分析识别疾病进展的临界转变点，实现早期干预。';
+                
+                // Impact & Value
+                document.querySelectorAll('.bg-surface-container h3')[1].textContent = '研究价值';
+                document.querySelectorAll('.bg-surface-container p')[1].textContent = '成功识别40个肿瘤标志物并获得生物学验证，展示了早期疾病检测的潜力。';
+                
+                // Footer
+                document.querySelector('footer p:nth-of-type(1)').textContent = '数据不会说谎，只是需要正确的解读方式。';
+                document.querySelector('footer p:nth-of-type(2)').textContent = '联系我 - xtongzhou@163.com';
+                
+                // Navigation
+                document.querySelector('.group-hover\:text-primary').textContent = '返回主页';
+                document.querySelector('button').textContent = 'EN/中';
+            }
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('language') || 'zh';
+            updateLanguage(savedLang);
+            
+            // Add click event to language button
+            const langButton = document.querySelector('button');
+            if (langButton !== null) {
+                langButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleLanguage();
+                });
+            }
+        });
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 border-none bg-gradient-to-b from-neutral-900/50 to-transparent bg-neutral-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 group transition-all duration-200 hover:scale-105" href="index.html#project3">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+<span class="font-['Be_Vietnam_Pro'] text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400 group-hover:text-primary transition-colors">返回主页</span>
+</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#eeeef0] opacity-70 font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:text-[#ffd16c] transition-colors">EN/中</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+<!-- Hero Section -->
+<section class="relative mb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8 relative z-10">
+<div class="inline-flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-full mb-6 border border-outline-variant/10">
+<span class="text-label-md font-bold text-tertiary uppercase tracking-widest">健康科技 · 生物标志物挖掘</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black headline-font leading-tight mb-8 text-white">
+                    时序生物标志物检测 <br/>
+</h1>
+<p class="font-['Be_Vietnam_Pro'] text-neutral-400 font-bold tracking-widest uppercase mb-8">2024.05 – 2024.12</p>
+<!-- Tech Stack Row -->
+<div class="flex flex-wrap gap-3 mb-12">
+<span class="px-5 py-2 bg-surface-container-highest text-tertiary font-bold rounded-xl hover:scale-105 transition-all cursor-default">AutoEncoder</span>
+<span class="px-5 py-2 bg-surface-container-highest text-tertiary font-bold rounded-xl hover:scale-105 transition-all cursor-default">LSTM</span>
+<span class="px-5 py-2 bg-surface-container-highest text-tertiary font-bold rounded-xl hover:scale-105 transition-all cursor-default">李雅普诺夫指数</span>
+<span class="px-5 py-2 bg-surface-container-highest text-tertiary font-bold rounded-xl hover:scale-105 transition-all cursor-default">Python</span>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border-b-4 border-tertiary shadow-lg transition-transform hover:-translate-y-2">
+<p class="text-neutral-400 text-xs font-bold uppercase tracking-widest mb-2">关键基因锁定</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-black headline-font text-white">40个</span>
+<span class="text-tertiary text-sm font-bold pb-1">获生物学验证</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-b-4 border-primary shadow-lg transition-transform hover:-translate-y-2">
+<p class="text-neutral-400 text-xs font-bold uppercase tracking-widest mb-2">基因簇识别</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-black headline-font text-white">4种</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">genetics</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Background & Challenges -->
+<div class="md:col-span-12 lg:col-span-5 bg-surface-container p-10 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[8rem]" data-icon="troubleshoot">troubleshoot</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-tertiary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="search">search</span>
+</div>
+<h3 class="text-3xl font-black headline-font text-white">项目背景</h3>
+</div>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p class="text-lg">
+                            基于真实健康数据构建时序异常检测模型，识别潜在生物标志物与身体临界健康波动状态。
+                        </p>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary">biotech</span>
+<span>识别免疫相关与代谢通路</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary">timeline</span>
+<span>支持后续风险预测系统构建</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Solution Panel -->
+<div class="md:col-span-12 lg:col-span-7 bg-surface-container-high p-10 rounded-lg shadow-xl relative overflow-hidden border-t-8 border-tertiary">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-tertiary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary" style="font-variation-settings: 'FILL' 1;">build</span>
+</div>
+<h3 class="text-3xl font-black headline-font text-white">核心解决方案</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h4 class="text-tertiary font-bold mb-4 uppercase tracking-tighter">深度学习异常检测</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            构建基于AutoEncoder全局异常检测与LSTM的时序重构模型，对2万条数据进行建模，通过计算个体序列的重构误差捕捉系统非线性突变。
+                        </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h4 class="text-tertiary font-bold mb-4 uppercase tracking-tighter">动力学系统特征挖掘</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            引入动力学系统理论，利用滑动窗口计算李雅普诺夫指数定量评估系统稳定性，成功捕捉生物系统向疾病态演化的临界信号。
+                        </p>
+</div>
+<div class="md:col-span-2">
+<div class="bg-tertiary/5 p-8 rounded-xl border-2 border-dashed border-tertiary/20">
+<div class="flex-1">
+<h4 class="text-white font-bold mb-2">方法融合与生物学验证</h4>
+<p class="text-on-surface-variant text-sm">提取深度学习异常分值与动力学临界信号基因的交集特征，对锁定的40个核心标志物进行基因富集分析，结果证实其与肿瘤代谢、细胞凋亡等生物学机理高度一致。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Impact & Value -->
+<div class="md:col-span-12 bg-surface-container p-10 rounded-lg flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1 order-2 md:order-1">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<h3 class="text-3xl font-black headline-font text-white">研究成果</h3>
+</div>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-8">
+                        通过多维度算法融合，成功筛选得到具有代表性的关键基因40个，识别出5条免疫相关与代谢通路，验证了多维度算法融合在特征发现上的鲁棒性。
+                    </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="text-center p-4">
+<div class="text-tertiary text-3xl font-black mb-1">40</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">关键基因</div>
+</div>
+<div class="text-center p-4">
+<div class="text-tertiary text-3xl font-black mb-1">5条</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">代谢通路</div>
+</div>
+<div class="text-center p-4">
+<div class="text-tertiary text-3xl font-black mb-1">4种</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">基因簇</div>
+</div>
+<div class="text-center p-4">
+<div class="text-tertiary text-3xl font-black mb-1">2万</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">数据样本</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[4rem] mt-24 bg-neutral-900 border-t border-neutral-800/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full max-w-7xl mx-auto">
+<div class="flex-1 text-center md:text-left">
+<p class="font-['Be_Vietnam_Pro'] text-neutral-400 text-sm">数据不会说谎，只是需要正确的解读方式。</p>
+</div>
+<div class="flex-1 text-center md:text-right">
+<p class="font-['Be_Vietnam_Pro'] text-neutral-400 text-sm">联系我 - xtongzhou@163.com</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

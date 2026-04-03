@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#ff7161",
+                    "surface-container-high": "#1d2022",
+                    "secondary-fixed-dim": "#ffaeba",
+                    "primary": "#ffd16c",
+                    "tertiary-dim": "#ff7161",
+                    "on-primary-fixed": "#3d2b00",
+                    "primary-fixed": "#fdc003",
+                    "on-background": "#eeeef0",
+                    "surface-container-lowest": "#000000",
+                    "on-tertiary": "#4a0001",
+                    "secondary-container": "#bc004b",
+                    "on-tertiary-fixed": "#3a0001",
+                    "background": "#0c0e10",
+                    "outline-variant": "#46484a",
+                    "on-secondary-container": "#fff6f5",
+                    "secondary-fixed": "#ffc2ca",
+                    "on-error": "#450900",
+                    "surface-dim": "#0c0e10",
+                    "on-error-container": "#ffd2c8",
+                    "error-dim": "#d53d18",
+                    "outline": "#747578",
+                    "on-tertiary-container": "#110000",
+                    "on-primary-fixed-variant": "#604700",
+                    "on-surface": "#eeeef0",
+                    "surface": "#0c0e10",
+                    "primary-fixed-dim": "#ecb200",
+                    "error-container": "#b92902",
+                    "surface-tint": "#ffd16c",
+                    "on-tertiary-fixed-variant": "#7a0003",
+                    "inverse-primary": "#795a00",
+                    "surface-container": "#171a1c",
+                    "surface-bright": "#292c2f",
+                    "on-primary-container": "#553e00",
+                    "primary-container": "#fdc003",
+                    "secondary-dim": "#e2165f",
+                    "inverse-surface": "#f9f9fc",
+                    "inverse-on-surface": "#535557",
+                    "on-surface-variant": "#aaabad",
+                    "primary-dim": "#ecb200",
+                    "error": "#ff7351",
+                    "surface-container-highest": "#232629",
+                    "secondary": "#ff6d8d",
+                    "on-secondary-fixed-variant": "#a30040",
+                    "on-primary": "#604700",
+                    "tertiary-fixed": "#ff9385",
+                    "on-secondary": "#480018",
+                    "tertiary-container": "#fd493b",
+                    "surface-container-low": "#111416",
+                    "tertiary-fixed-dim": "#ff7c6c",
+                    "surface-variant": "#232629",
+                    "on-secondary-fixed": "#6e0028"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0c0e10;
+            color: #eeeef0;
+            font-family: 'Be Vietnam Pro', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(253, 192, 3, 0.1) 0%, rgba(12, 14, 16, 0) 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-on-primary-fixed">
+<!-- Top Identity Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0c0e10]/80 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.4)] px-10 py-4 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-[#ffd16c] tracking-widest uppercase font-['Plus_Jakarta_Sans']">关于我</span>
+<div class="hidden md:flex items-center gap-8 ml-12">
+<a class="text-[#eeeef0] opacity-70 font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:scale-105 hover:text-[#ffd16c] transition-all" href="#projects">高光项目</a>
+<a class="text-[#eeeef0] opacity-70 font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:scale-105 hover:text-[#ffd16c] transition-all" href="#strengths">个人优势</a>
+<a class="text-[#eeeef0] opacity-70 font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:scale-105 hover:text-[#ffd16c] transition-all" href="#contact">联系我</a>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#eeeef0] opacity-70 font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:text-[#ffd16c] transition-colors">EN/中</button>
+<button class="bg-[#ffd16c] text-[#604700] px-6 py-2 rounded-full font-bold hover:scale-105 active:scale-95 transition-all">简历</button>
+</div>
+</nav>
+<main class="pt-28 px-6 md:px-12 max-w-7xl mx-auto space-y-24">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center hero-gradient rounded-xl p-8 md:p-12 border border-outline-variant/10">
+<div class="md:col-span-5 relative group">
+<div class="absolute -inset-4 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-all duration-700"></div>
+<div class="relative w-full aspect-square bg-surface-container rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl">
+<img alt="Character Photo" class="w-full h-full object-cover" data-alt="A quirky illustration of a characterful goose wearing a stylish detective hat and tiny glasses, digital art style, whimsical yet professional" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZG-c9A7xA8uyRnMCwjnnei59DwNYUzpCHbZj85sFrGGJO720FryJy3NslHKmhyBkaM2H94A9rktiWMIxB4Dcfr4wCW7W0qMYPZZaamEd7mhFD8dULpHtGcNk5b-xisGRr_TC0USKbqCCe7nv4pZ_dNAvv0fxgVqqqspdLxmcgv3bPCJj3N71dtL5kUu5X2gMQH7q_d7PArjTbhiG4RMY5_66Sj76qqB6RKNyEq6aZ4G6r1bIJpFbkCv5bcj8H8F_9YK063g11RGY"/>
+</div>
+<div class="absolute -bottom-6 -right-6 bg-surface-bright p-4 rounded-xl shadow-xl rotate-6 border border-primary/30">
+<span class="text-primary font-bold font-headline">LVL 99 EXPERT</span>
+</div>
+</div>
+<div class="md:col-span-7 space-y-8">
+<div class="space-y-2">
+<span class="text-secondary font-bold tracking-widest text-sm uppercase">关于我</span>
+<h1 class="text-5xl md:text-6xl font-black font-headline text-on-surface leading-tight">进化型 · <span class="text-primary">全链路算法工程师</span></h1>
+</div>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl font-body">
+                一个能做数据分析、也能建机器学习模型的“双修选手”。相信数据的价值不在于算法多复杂，而在于能否挖出隐藏的模式、驱动真实的商业决策。
+            </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-medium">香港大学硕士</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-medium">本科多次获得一等奖学金</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-medium">Kaggle 银牌</span>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">architecture</span>
+<span class="font-medium">雅思 7.0</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Cloud -->
+<section class="bg-surface-container-highest/30 backdrop-blur-sm p-12 rounded-3xl border border-outline-variant/10">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-black font-headline mb-4 uppercase">技术栈与武器库</h2>
+<p class="text-on-surface-variant">用行业领先的工具和框架铸就解决方案</p>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">Python</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">SQL</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">R</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">TensorFlow</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">PyTorch</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">Scikit-learn</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">LightGBM</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">XGBoost</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">LSTM</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">Transformer</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">AutoEncoder</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">PMML</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">LangChain</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">LLM</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">VBA</div>
+<div class="px-6 py-3 bg-surface-container-high rounded-xl text-primary font-bold border border-primary/20 hover:bg-primary hover:text-on-primary transition-all cursor-default">Git</div>
+</div>
+</section>
+<!-- Project Highlighting Wall -->
+<section class="space-y-12" id="projects">
+<div class="flex justify-between items-end">
+<h2 class="text-3xl font-black font-headline">项目高光墙 <span class="text-primary">/ SELECTED PROJECTS</span></h2>
+<div class="hidden md:flex items-center gap-2 text-on-surface-variant font-label text-xs uppercase tracking-tighter">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                实时看板运行中
+            </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Project 1 -->
+<div class="group relative overflow-hidden bg-surface-container rounded-3xl border border-outline-variant/10 hover:border-primary/50 transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 z-10"></div>
+<img alt="Project 1" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Complex data visualization dashboard with glowing neon lines representing credit risk metrics on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ0cjSQJRXh8GPlvH2gE4BqVHdI1leXklf0u3lVtxS2J9gIWI_TYCCYe85PKtMHJqhMQNUHA0Dm-bSAll7F6OveXSEbIlYHOyioe7rajtcPBRA-VoWxxSaOyET96A1TESXxKOosU0lB8YdZTAlEM2XLrz2uRa9mP6sppl56nP8jRr1Ju3c_jkxyTOc_2gxM0vukeYj5w9p0Al_tU1VDal5vGZpJE9DJbQhZdmCnYy2XLLI3L9tWY1oHnKdmXG27mx4ej-F4JGmWWE"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 space-y-3">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary/20 text-primary text-[10px] font-black rounded-full uppercase tracking-widest">Risk Model</span>
+<span class="px-3 py-1 bg-surface-bright/50 text-white text-[10px] font-black rounded-full uppercase tracking-widest">FinTech</span>
+</div>
+<h3 class="text-2xl font-black font-headline">端到端风控模型</h3>
+<p class="text-on-surface-variant">全链路落地。KS 0.18→0.21 ｜ 迭代周期 5天→2.5天 ｜ 部署上线</p>
+<div class="pt-2 flex items-center gap-4 text-primary font-bold">
+                        查看案例详情 <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative overflow-hidden bg-surface-container rounded-3xl border border-outline-variant/10 hover:border-secondary/50 transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 z-10"></div>
+<img alt="Project 2" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Abstract visualization of neural networks and time waves representing sleep monitoring technology, futuristic medical aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4ATGv6hSAJS3a0F1DGTABLIAJaxkzZVQiM9DRFXcffF8ah67qPaglaC_FX50X36cRMTf-wUdrtKd0DjYy-S40vfGxSawfZtKeNEy6VzeRmqj6mibOTii5PPBmLGJV09vJsaDd7y6s_HwBoRiaYk1HqzYx722j5JbmluYio5cUvROEWf_H5VYxzIXJQG7HOK52JparWl5ImimNtnNjYV294MLD8YZBBIK2ND8sqXupNbKtG9eyVNUl0mXWmMlxfQqMLOmTddRMmFA"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 space-y-3">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary/20 text-secondary text-[10px] font-black rounded-full uppercase tracking-widest">Deep Learning</span>
+<span class="px-3 py-1 bg-surface-bright/50 text-white text-[10px] font-black rounded-full uppercase tracking-widest">Top 5%</span>
+</div>
+<h3 class="text-2xl font-black font-headline">儿童睡眠检测（Kaggle 银牌）</h3>
+<p class="text-on-surface-variant">Top 5%。AP 0.787 ｜ 跨界分类→目标检测</p>
+<div class="pt-2 flex items-center gap-4 text-secondary font-bold">
+                        查看案例详情 <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative overflow-hidden bg-surface-container rounded-3xl border border-outline-variant/10 hover:border-tertiary/50 transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 z-10"></div>
+<img alt="Project 3" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Microscopic view of DNA strands with glowing data particles representing biological time-series analysis" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXkGy9KSyRTBg0tuXro40MeBdSo6f4k72llj0ojkYAkVIwSCjegAuSxU6UzRoL2Xu-vWRPzfbjsblaUEbcj6JQca1kJmyVxZvHZylKepdNoQ5P-jqjj7VeUquqjsEatU0TK-5hYjp9GEdz72n41xmoYstkPRu_6qjDTVuMT9lXP7KOrwfTlISlgkYdaFkiOuSaiSp3aU-QPGTvp0K2VqZ27dwp7hwkVhftyVnNVEgHI2gJ_TYLtCals3_Jgu9Cf3j7wEFFYpN-t5w"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 space-y-3">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-tertiary/20 text-tertiary text-[10px] font-black rounded-full uppercase tracking-widest">Health-Tech</span>
+<span class="px-3 py-1 bg-surface-bright/50 text-white text-[10px] font-black rounded-full uppercase tracking-widest">AutoEncoder</span>
+</div>
+<h3 class="text-2xl font-black font-headline">时序生物标志物挖掘</h3>
+<p class="text-on-surface-variant">疾病临界信号捕捉。锁定40个肿瘤标志物，获生物学验证</p>
+<div class="pt-2 flex items-center gap-4 text-tertiary font-bold">
+                        查看案例详情 <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group relative overflow-hidden bg-surface-container rounded-3xl border border-outline-variant/10 hover:border-primary/50 transition-all duration-500">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 z-10"></div>
+<img alt="Project 4" class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A stylized 3D representation of the Wordle game grid with letters floating in a data stream" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2S-aB5MB5pysqQdU6o2xVUqkOc6M695i8Nm9pSsVY_3wy7YDno0bauvWf9DkdKNNWGDO_gWSnAIm-b-cL8bF3csAkwK0pY_2P3kSujZGDSz65xZcMjKO9lpHgtnEEssyit5mIBMtkZF-0EeEmjf7O9mIZsdL-Ci5PNZwSivG5iJaXlH4MpLLFC3Yh1UTxtFeOCXH0XOgCT53s2RFJm5tEdbgC-c_IHx7h0neKpDdT4fLfTOrByjkQ0T-_6MrRkl8UqpxWFmgFWuw"/>
+<div class="absolute bottom-0 left-0 p-8 z-20 space-y-3">
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-primary/20 text-primary text-[10px] font-black rounded-full uppercase tracking-widest">NLP &amp; Forecasting</span>
+<span class="px-3 py-1 bg-surface-bright/50 text-white text-[10px] font-black rounded-full uppercase tracking-widest">Ensemble</span>
+</div>
+<h3 class="text-2xl font-black font-headline">Wordle 建模</h3>
+<p class="text-on-surface-variant">玩家行为预测与难度分级。MAPE 3.7% ｜ KL散度 0.0479</p>
+<div class="pt-2 flex items-center gap-4 text-primary font-bold">
+                        查看案例详情 <span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strengths Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center" id="strengths">
+<div class="space-y-8">
+<h2 class="text-3xl font-black font-headline uppercase">个人优势与评价</h2>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">数据建模能力</h4>
+<p class="text-on-surface-variant">能够从金融、医疗等多领域高维噪声数据中精准识别潜在模式。</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="p-2 bg-secondary/10 rounded-lg">
+<span class="material-symbols-outlined text-secondary">terminal</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">工程优化意识</h4>
+<p class="text-on-surface-variant">通过整洁、优化的代码，弥合纯学术研究与生产级工程之间的鸿沟。</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="p-2 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">groups</span>
+</div>
+<div>
+<h4 class="font-bold text-lg">向AI/LLM转型中</h4>
+<p class="text-on-surface-variant">积极拥抱大语言模型与生成式AI技术，探索业务场景下的工程落地可能。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container p-12 rounded-3xl border-2 border-dashed border-outline-variant/30 relative">
+<div class="absolute -top-6 -right-6 w-24 h-24 bg-primary rounded-full opacity-10 animate-pulse"></div>
+<h3 class="text-xl font-black mb-6 uppercase tracking-widest text-primary">自我总结</h3>
+<div class="space-y-4">
+<p class="italic text-lg text-on-surface/90 font-light leading-relaxed">
+                    • 量化指标：效率提升 78%、模型迭代 50%、模型精度 KS +0.03。
+                </p>
+<p class="italic text-lg text-on-surface/90 font-light leading-relaxed">
+                    • 项目：端到端风控模型、儿童睡眠检测（Kaggle银牌）、时序生物标志物挖掘、Wordle建模。
+                </p>
+<p class="italic text-lg text-on-surface/90 font-light leading-relaxed">
+                    • 个人优势：数据分析/建模能力、工程优化意识、向AI/LLM转型中。
+                </p>
+</div>
+<div class="mt-8 flex items-center gap-4">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-[#604700]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<div class="font-bold text-on-surface">Data Scientist &amp; MLE</div>
+<div class="text-xs text-on-surface-variant uppercase">六边形战士认证</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer / Action Area -->
+<footer class="w-full rounded-t-full mt-24 bg-[#111416] flex flex-col items-center gap-6 py-12 px-8" id="contact">
+<div class="text-lg font-bold text-[#ffd16c] font-['Plus_Jakarta_Sans']">保持联系</div>
+<div class="flex flex-col md:flex-row items-center gap-8 mb-4">
+<a class="flex items-center gap-3 text-2xl font-black text-on-surface hover:text-[#ffd16c] transition-colors" href="mailto:hello@avianintrigue.ai">
+<span class="material-symbols-outlined">mail</span>
+            data.goose@portfolio.com
+        </a>
+<button class="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105 active:scale-95 focus:ring-2 focus:ring-[#ffd16c]">
+<span class="material-symbols-outlined">download</span>
+            下载 PDF 简历
+        </button>
+</div>
+<div class="flex gap-8 text-sm tracking-wide font-['Be_Vietnam_Pro']">
+<a class="text-[#eeeef0] opacity-60 hover:text-[#ff6d8d] transition-colors" href="#">GitHub</a>
+<a class="text-[#eeeef0] opacity-60 hover:text-[#ff6d8d] transition-colors" href="#">LinkedIn</a>
+<a class="text-[#eeeef0] opacity-60 hover:text-[#ff6d8d] transition-colors" href="#">Kaggle</a>
+</div>
+<div class="text-[#eeeef0] opacity-30 text-[10px] uppercase tracking-widest mt-8">
+        © 2024 Data Scientist Portfolio | Built with Avian Intrigue
+    </div>
+</footer>
+</body></html>

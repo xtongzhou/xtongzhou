@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#b92902",
+                    "on-surface": "#eeeef0",
+                    "on-background": "#eeeef0",
+                    "surface-dim": "#0c0e10",
+                    "outline-variant": "#46484a",
+                    "on-surface-variant": "#aaabad",
+                    "inverse-primary": "#795a00",
+                    "surface-variant": "#232629",
+                    "on-primary-container": "#553e00",
+                    "surface-container": "#171a1c",
+                    "primary-fixed": "#fdc003",
+                    "on-secondary-fixed-variant": "#a30040",
+                    "on-tertiary-fixed-variant": "#7a0003",
+                    "outline": "#747578",
+                    "on-tertiary-fixed": "#3a0001",
+                    "surface-tint": "#ffd16c",
+                    "secondary-container": "#bc004b",
+                    "inverse-surface": "#f9f9fc",
+                    "tertiary-fixed-dim": "#ff7c6c",
+                    "surface-container-highest": "#232629",
+                    "on-primary": "#604700",
+                    "error-dim": "#d53d18",
+                    "on-error": "#450900",
+                    "surface-container-lowest": "#000000",
+                    "surface": "#0c0e10",
+                    "on-tertiary": "#4a0001",
+                    "secondary-fixed-dim": "#ffaeba",
+                    "secondary-dim": "#e2165f",
+                    "primary-fixed-dim": "#ecb200",
+                    "tertiary-fixed": "#ff9385",
+                    "secondary": "#ff6d8d",
+                    "surface-bright": "#292c2f",
+                    "on-secondary": "#480018",
+                    "primary-container": "#fdc003",
+                    "on-tertiary-container": "#110000",
+                    "error": "#ff7351",
+                    "tertiary-container": "#fd493b",
+                    "secondary-fixed": "#ffc2ca",
+                    "on-secondary-container": "#fff6f5",
+                    "tertiary-dim": "#ff7161",
+                    "on-error-container": "#ffd2c8",
+                    "background": "#0c0e10",
+                    "primary": "#ffd16c",
+                    "on-primary-fixed-variant": "#604700",
+                    "inverse-on-surface": "#535557",
+                    "on-secondary-fixed": "#6e0028",
+                    "surface-container-low": "#111416",
+                    "on-primary-fixed": "#3d2b00",
+                    "tertiary": "#ff7161",
+                    "primary-dim": "#ecb200",
+                    "surface-container-high": "#1d2022"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Be Vietnam Pro"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        body { font-family: 'Be Vietnam Pro', 'PingFang SC', 'Microsoft YaHei', sans-serif; background-color: #0c0e10; color: #eeeef0; }
+        .headline-font { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-panel { background: rgba(41, 44, 47, 0.6); backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+    <script>
+        // Language toggle functionality
+        function toggleLanguage() {
+            const currentLang = localStorage.getItem('language') || 'zh';
+            const newLang = currentLang === 'zh' ? 'en' : 'zh';
+            localStorage.setItem('language', newLang);
+            updateLanguage(newLang);
+        }
+
+        function updateLanguage(lang) {
+            if (lang === 'en') {
+                // English content
+                document.querySelector('.text-label-md').textContent = 'Kaggle Competition · Silver Medal (Top 5%)';
+                document.querySelector('h1').textContent = 'Child Sleep State Detection';
+                document.querySelector('.font-\[\'Be_Vietnam_Pro\'\]').textContent = '2023.09 – 2023.12';
+                
+                // Tech stack
+                document.querySelectorAll('.bg-surface-container-highest')[0].textContent = 'CenterNet';
+                document.querySelectorAll('.bg-surface-container-highest')[1].textContent = 'Transformer';
+                document.querySelectorAll('.bg-surface-container-highest')[2].textContent = 'NMS';
+                document.querySelectorAll('.bg-surface-container-highest')[3].textContent = 'Python';
+                
+                // Metrics
+                document.querySelectorAll('.text-neutral-400')[1].textContent = 'AP Score';
+                document.querySelectorAll('.text-neutral-400')[2].textContent = 'Competition Rank';
+                
+                // Background & Challenges
+                document.querySelector('#strengths h3').textContent = 'Project Background';
+                document.querySelector('#strengths p').textContent = 'Kaggle competition focused on detecting child sleep states from video data, requiring high precision and real-time performance.';
+                document.querySelectorAll('#strengths li')[0].querySelector('span:last-child').textContent = 'Cross-domain model transformation';
+                document.querySelectorAll('#strengths li')[1].querySelector('span:last-child').textContent = 'Real-time performance optimization';
+                
+                // Solution Panel
+                document.querySelectorAll('.bg-surface-container-high h3')[0].textContent = 'Core Solutions';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[0].textContent = 'CenterNet Object Detection';
+                document.querySelectorAll('.bg-surface-container-lowest p')[0].textContent = 'Adopted CenterNet for precise keypoint detection, replacing traditional classification methods to capture subtle sleep state changes.';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[1].textContent = 'Transformer Feature Fusion';
+                document.querySelectorAll('.bg-surface-container-lowest p')[1].textContent = 'Integrated Transformer architecture for temporal feature fusion, capturing long-range dependencies in sleep state sequences.';
+                document.querySelector('.bg-secondary\/5 h4').textContent = 'NMS Optimization';
+                document.querySelector('.bg-secondary\/5 p').textContent = 'Implemented optimized Non-Maximum Suppression algorithm to reduce false positives and improve detection accuracy in complex scenarios.';
+                
+                // Impact & Value
+                document.querySelectorAll('.bg-surface-container h3')[1].textContent = 'Competition Results';
+                document.querySelectorAll('.bg-surface-container p')[1].textContent = 'Achieved Silver Medal (Top 5%) in the Kaggle competition, demonstrating the effectiveness of the proposed approach in real-world scenarios.';
+                
+                // Footer
+                document.querySelector('footer p:nth-of-type(1)').textContent = 'Data doesn\'t lie, it just needs the right interpretation.';
+                document.querySelector('footer p:nth-of-type(2)').textContent = 'Contact - xtongzhou@163.com';
+                
+                // Navigation
+                document.querySelector('.group-hover\:text-primary').textContent = 'Back to Home';
+                document.querySelector('button').textContent = '中/EN';
+            } else {
+                // Chinese content
+                document.querySelector('.text-label-md').textContent = 'Kaggle竞赛 · 银牌 (Top 5%)';
+                document.querySelector('h1').textContent = '儿童睡眠状态检测';
+                document.querySelector('.font-\[\'Be_Vietnam_Pro\'\]').textContent = '2023.09 – 2023.12';
+                
+                // Tech stack
+                document.querySelectorAll('.bg-surface-container-highest')[0].textContent = 'CenterNet';
+                document.querySelectorAll('.bg-surface-container-highest')[1].textContent = 'Transformer';
+                document.querySelectorAll('.bg-surface-container-highest')[2].textContent = 'NMS';
+                document.querySelectorAll('.bg-surface-container-highest')[3].textContent = 'Python';
+                
+                // Metrics
+                document.querySelectorAll('.text-neutral-400')[1].textContent = 'AP分数';
+                document.querySelectorAll('.text-neutral-400')[2].textContent = '竞赛排名';
+                
+                // Background & Challenges
+                document.querySelector('#strengths h3').textContent = '项目背景';
+                document.querySelector('#strengths p').textContent = 'Kaggle竞赛项目，专注于从视频数据中检测儿童睡眠状态，要求高精度和实时性能。';
+                document.querySelectorAll('#strengths li')[0].querySelector('span:last-child').textContent = '跨域模型转换';
+                document.querySelectorAll('#strengths li')[1].querySelector('span:last-child').textContent = '实时性能优化';
+                
+                // Solution Panel
+                document.querySelectorAll('.bg-surface-container-high h3')[0].textContent = '核心解决方案';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[0].textContent = 'CenterNet目标检测';
+                document.querySelectorAll('.bg-surface-container-lowest p')[0].textContent = '采用CenterNet进行精确的关键点检测，替代传统分类方法，捕捉睡眠状态的细微变化。';
+                document.querySelectorAll('.bg-surface-container-lowest h4')[1].textContent = 'Transformer特征融合';
+                document.querySelectorAll('.bg-surface-container-lowest p')[1].textContent = '集成Transformer架构进行 temporal特征融合，捕捉睡眠状态序列中的长距离依赖关系。';
+                document.querySelector('.bg-secondary\/5 h4').textContent = 'NMS优化';
+                document.querySelector('.bg-secondary\/5 p').textContent = '实现优化的非极大值抑制算法，减少复杂场景中的误检，提高检测精度。';
+                
+                // Impact & Value
+                document.querySelectorAll('.bg-surface-container h3')[1].textContent = '竞赛成果';
+                document.querySelectorAll('.bg-surface-container p')[1].textContent = '在Kaggle竞赛中获得银牌（Top 5%），证明了所提出方法在实际场景中的有效性。';
+                
+                // Footer
+                document.querySelector('footer p:nth-of-type(1)').textContent = '数据不会说谎，只是需要正确的解读方式。';
+                document.querySelector('footer p:nth-of-type(2)').textContent = '联系我 - xtongzhou@163.com';
+                
+                // Navigation
+                document.querySelector('.group-hover\:text-primary').textContent = '返回主页';
+                document.querySelector('button').textContent = 'EN/中';
+            }
+        }
+
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('language') || 'zh';
+            updateLanguage(savedLang);
+            
+            // Add click event to language button
+            const langButton = document.querySelector('button');
+            if (langButton !== null) {
+                langButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    toggleLanguage();
+                });
+            }
+        });
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 border-none bg-gradient-to-b from-neutral-900/50 to-transparent bg-neutral-950/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-6">
+<a class="flex items-center gap-2 group transition-all duration-200 hover:scale-105" href="index.html#project2">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+<span class="font-['Be_Vietnam_Pro'] text-xs font-semibold tracking-[0.2em] uppercase text-neutral-400 group-hover:text-primary transition-colors">返回主页</span>
+</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#eeeef0] opacity-70 font-['Plus_Jakarta_Sans'] font-bold tracking-tight hover:text-[#ffd16c] transition-colors">EN/中</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+<!-- Hero Section -->
+<section class="relative mb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8 relative z-10">
+<div class="inline-flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-full mb-6 border border-outline-variant/10">
+<span class="text-label-md font-bold text-secondary uppercase tracking-widest">Kaggle竞赛 · 银牌 (Top 5%)</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-black headline-font leading-tight mb-8 text-white">
+                    儿童睡眠状态检测 <br/>
+</h1>
+<p class="font-['Be_Vietnam_Pro'] text-neutral-400 font-bold tracking-widest uppercase mb-8">2023.09 – 2023.12</p>
+<!-- Tech Stack Row -->
+<div class="flex flex-wrap gap-3 mb-12">
+<span class="px-5 py-2 bg-surface-container-highest text-secondary font-bold rounded-xl hover:scale-105 transition-all cursor-default">CenterNet</span>
+<span class="px-5 py-2 bg-surface-container-highest text-secondary font-bold rounded-xl hover:scale-105 transition-all cursor-default">Transformer</span>
+<span class="px-5 py-2 bg-surface-container-highest text-secondary font-bold rounded-xl hover:scale-105 transition-all cursor-default">NMS</span>
+<span class="px-5 py-2 bg-surface-container-highest text-secondary font-bold rounded-xl hover:scale-105 transition-all cursor-default">Python</span>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl border-b-4 border-secondary shadow-lg transition-transform hover:-translate-y-2">
+<p class="text-neutral-400 text-xs font-bold uppercase tracking-widest mb-2">平均精度AP</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-black headline-font text-white">0.787</span>
+<span class="text-secondary text-sm font-bold pb-1">Top 5%</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl border-b-4 border-primary shadow-lg transition-transform hover:-translate-y-2">
+<p class="text-neutral-400 text-xs font-bold uppercase tracking-widest mb-2">竞赛排名</p>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-black headline-font text-white">银牌</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Background & Challenges -->
+<div class="md:col-span-12 lg:col-span-5 bg-surface-container p-10 rounded-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[8rem]" data-icon="troubleshoot">troubleshoot</span>
+</div>
+<div class="relative z-10">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="search">search</span>
+</div>
+<h3 class="text-3xl font-black headline-font text-white">项目背景</h3>
+</div>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p class="text-lg">
+                            基于可穿戴设备加速度计数据，监测睡眠事件，构建模型预测入睡时间点与起床时间点。
+                        </p>
+<ul class="space-y-4">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary">emergency_home</span>
+<span>解决稀疏事件边界模糊问题</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-secondary">watch</span>
+<span>处理手表传感器时间序列数据</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Solution Panel -->
+<div class="md:col-span-12 lg:col-span-7 bg-surface-container-high p-10 rounded-lg shadow-xl relative overflow-hidden border-t-8 border-secondary">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary" style="font-variation-settings: 'FILL' 1;">build</span>
+</div>
+<h3 class="text-3xl font-black headline-font text-white">核心解决方案</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h4 class="text-secondary font-bold mb-4 uppercase tracking-tighter">CenterNet+Transformer架构</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            提出CenterNet+Transformer混合架构，以高斯热力图回归替代二分类，利用自注意力机制捕捉长时序依赖。
+                        </p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<h4 class="text-secondary font-bold mb-4 uppercase tracking-tighter">数据处理与特征工程</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed">
+                            引入动态实例归一化消除域偏移，采用Masked Loss处理缺失标签，结合滑动窗口构建一阶差分信号强度指标。
+                        </p>
+</div>
+<div class="md:col-span-2">
+<div class="bg-secondary/5 p-8 rounded-xl border-2 border-dashed border-secondary/20 flex flex-col md:flex-row items-center gap-8">
+<div class="flex-1">
+<h4 class="text-white font-bold mb-2">时序NMS优化</h4>
+<p class="text-on-surface-variant text-sm">将睡眠事件检测视为一维目标检测问题，构建[onset, wakeup]时间边界框，引入时序非极大值抑制算法消除高IoU的冗余预测框。</p>
+</div>
+<div class="w-full md:w-48 h-24 bg-surface-container-highest rounded-lg flex items-center justify-center font-black text-secondary italic tracking-widest text-xl">
+                                NMS_OPT
+                             </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Impact & Value -->
+<div class="md:col-span-12 bg-surface-container p-10 rounded-lg flex flex-col md:flex-row gap-12 items-center">
+<div class="flex-1 order-2 md:order-1">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">emoji_events</span>
+</div>
+<h3 class="text-3xl font-black headline-font text-white">竞赛成果</h3>
+</div>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-8">
+                        该方案在Kaggle竞赛中获得银牌，位列全球参赛队伍Top 5%，成功解决了睡眠事件检测中的稀疏事件边界模糊问题。
+                    </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="text-center p-4">
+<div class="text-secondary text-3xl font-black mb-1">0.787</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">平均精度AP</div>
+</div>
+<div class="text-center p-4">
+<div class="text-secondary text-3xl font-black mb-1">Top 5%</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">竞赛排名</div>
+</div>
+<div class="text-center p-4">
+<div class="text-secondary text-3xl font-black mb-1">+0.1</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">分数提升</div>
+</div>
+<div class="text-center p-4">
+<div class="text-secondary text-3xl font-black mb-1">银牌</div>
+<div class="text-xs font-bold uppercase tracking-widest text-neutral-500">荣誉等级</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[4rem] mt-24 bg-neutral-900 border-t border-neutral-800/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8 w-full max-w-7xl mx-auto">
+<div class="flex-1 text-center md:text-left">
+<p class="font-['Be_Vietnam_Pro'] text-neutral-400 text-sm">数据不会说谎，只是需要正确的解读方式。</p>
+</div>
+<div class="flex-1 text-center md:text-right">
+<p class="font-['Be_Vietnam_Pro'] text-neutral-400 text-sm">联系我 - xtongzhou@163.com</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
